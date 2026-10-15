@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>The GetYourCar problem</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="../slides.css">
+<style>.ra-foot{font-size:12px}.ra-foot #pageno{color:#9BA1A6}.ra-foot.on-dark #pageno{color:rgba(255,255,255,0.45)}</style>
+</head><body>
+<div class="ra-slide-stage"><div class="ra-slide s-light" data-screen-label="10 The GetYourCar problem">
+<a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .gyc-lead { font:500 17px/1.5 var(--ra-font-deck-body); color:#181B25; margin:8px 0 12px; max-width:1100px; }
+    .gyc-grid { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:16px; min-height:0; }
+    .gyc-col { display:flex; flex-direction:column; gap:10px; }
+    .gyc-box { background:#F7F7FA; border-radius:10px; padding:14px 18px; }
+    .gyc-box.alert { background:#FFE9E4; border-left:3px solid #FF8D73; }
+    .gyc-box.note  { background:#EFF0FF; border-left:3px solid #4F60FF; }
+    .gyc-box h3 { font:700 14px/1.2 var(--ra-font-deck-display); margin:0 0 6px; color:#181B25; letter-spacing:-0.005em; text-transform:uppercase; letter-spacing:0.06em; font-size:11px; }
+    .gyc-box p { font:400 14px/1.5 var(--ra-font-deck-body); color:#1F2433; margin:0; }
+    .gyc-box p strong { font-weight:600; color:#181B25; }
+    .gyc-deliv h3 { font:700 11px/1 var(--ra-font-deck-ui); letter-spacing:0.14em; text-transform:uppercase; color:#4F60FF; margin:0 0 8px; }
+    .gyc-deliv ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:7px; }
+    .gyc-deliv li { font:400 14px/1.5 var(--ra-font-deck-body); color:#181B25; padding-left:18px; position:relative; }
+    .gyc-deliv li::before { content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:#4F60FF; }
+    .gyc-ask { margin-top:auto; padding:14px 18px; background:#1F2433; color:#fff; border-radius:8px; font:500 14px/1.5 var(--ra-font-deck-body); }
+    .gyc-ask strong { color:#87A0FF; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">The hard design question</p>
+    <h2 class="ra-title sm" style="font-size:36px;">The GetYourCar problem. <span style="color:#FF8D73;">Know this before you walk in.</span></h2>
+    <p class="gyc-lead">The most important single design question for the sprint. <strong>Raise it explicitly in the Tuesday GYC sessions.</strong></p>
+    <div class="gyc-grid">
+      <div class="gyc-col">
+        <div class="gyc-box alert">
+          <h3>The problem</h3>
+          <p>A customer can submit a GYC enquiry without completing a configuration. Configurations and enquiries <strong>do not have a 1:1 join relationship</strong>. No reliable common join key exists in source data.</p>
+        </div>
+        <div class="gyc-box note">
+          <h3>Why it matters</h3>
+          <p>The metric the entire business wants is <strong>configuration-to-enquiry conversion rate</strong>. Currently impossible at transaction level. Workaround is an aggregated table (dealership × product × day) which avoids the join but is use-case-specific.</p>
+        </div>
+        <div class="gyc-box">
+          <h3>What Phase 1 does</h3>
+          <p><strong>Nothing.</strong> The aggregated table lifts as-is to BigQuery. Steph's Looker sits on it in its current form.</p>
+        </div>
+      </div>
+      <div class="gyc-col">
+        <div class="gyc-deliv">
+          <h3>What discovery must produce</h3>
+          <ul>
+            <li>A clear <strong>written articulation</strong> of the entity relationship problem &mdash; what it is, why it exists</li>
+            <li>Investigation of whether a join key could be <strong>derived from source data</strong> &mdash; session IDs, event timestamps, probabilistic matching</li>
+            <li>A <strong>proposed entity model for Phase 2</strong> &mdash; even if Phase 2 requires ingestion changes to implement, document what right looks like</li>
+          </ul>
+        </div>
+        <div class="gyc-ask">
+          Do not leave the Tuesday sessions without surfacing and documenting this. Ask directly:<br><br>
+          <strong>"How do you currently compute configuration-to-enquiry conversion rate, and what table does that come from?"</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">10 / 17</span>
+    </div>
+</div></div><script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(innerWidth/1280, innerHeight/720); s.style.transform='scale('+r+')';};fit(); addEventListener('resize',fit);})();</script>
+</body></html>

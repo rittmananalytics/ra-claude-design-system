@@ -1,0 +1,151 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="icon-library" subtitle="Lucide-on-indigo icons + generator" viewport="1100x900" -->
+<html><head><meta charset="utf-8">
+<title>Icon library — Rittman Analytics</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: #fff; font-family: var(--ra-font-body); color: var(--ra-ink); }
+  h2 { margin: 0 0 4px; font: 600 22px/1.2 var(--ra-font-display); letter-spacing: -0.01em; }
+  h3 { margin: 28px 0 12px; font: 600 13px/1.2 var(--ra-font-display); letter-spacing: 0.04em; text-transform: uppercase; color: var(--ra-mute-strong); }
+  .lede { color: var(--ra-mute-strong); font-size: 13px; max-width: 720px; margin: 0 0 6px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 14px;
+  }
+  .cell {
+    background: #fff;
+    border: 1px solid var(--ra-line);
+    border-radius: 12px;
+    padding: 18px 14px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: border-color .15s, transform .15s;
+  }
+  .cell:hover { border-color: var(--ra-indigo); transform: translateY(-1px); }
+  .cell img { width: 56px; height: 56px; display: block; }
+  .cell .name { font: 500 11px/1 var(--ra-font-mono, monospace); color: var(--ra-mute-strong); letter-spacing: 0.02em; }
+
+  /* Generator */
+  .gen {
+    margin-top: 36px;
+    padding: 20px 22px;
+    background: var(--ra-indigo-haze);
+    border: 1px solid var(--ra-indigo-soft);
+    border-radius: 14px;
+  }
+  .gen h3 { margin: 0 0 4px; color: var(--ra-indigo); }
+  .gen p { margin: 0 0 12px; font-size: 12.5px; color: var(--ra-mute-strong); max-width: 700px; }
+  .gen p code { font: 500 12px/1.4 ui-monospace, monospace; background: #fff; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--ra-line); }
+  .gen-row { display: grid; grid-template-columns: 80px 1fr auto; gap: 10px; align-items: stretch; }
+  .gen input, .gen textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--ra-line);
+    background: #fff;
+    border-radius: 8px;
+    font: 13px/1.4 ui-monospace, monospace;
+    color: var(--ra-ink);
+    resize: vertical;
+  }
+  .gen textarea { min-height: 64px; }
+  .gen input:focus, .gen textarea:focus { outline: 2px solid var(--ra-indigo); outline-offset: 1px; border-color: transparent; }
+  .gen-out {
+    display: flex; align-items: center; gap: 14px;
+    margin-top: 14px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid var(--ra-line);
+    border-radius: 10px;
+  }
+  .gen-out svg { width: 64px; height: 64px; flex-shrink: 0; }
+  .gen-out .meta { font: 12px/1.5 ui-monospace, monospace; color: var(--ra-mute-strong); flex: 1; }
+  .gen-out .meta .label { color: var(--ra-ink); font-weight: 600; }
+  .gen-out button {
+    padding: 8px 14px;
+    background: var(--ra-indigo);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    font: 500 12px/1 var(--ra-font-display);
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .gen-out button:hover { background: var(--ra-indigo-deep); }
+  .gen-out button.ok { background: var(--ra-success); }
+</style>
+</head>
+<body>
+
+<h2>Icon library</h2>
+<p class="lede">Lucide glyphs on the brand indigo (<code style="font:500 11px/1 ui-monospace,monospace;color:var(--ra-indigo)">#4F60FF</code>) circle. Used as inline section markers in slides, pillar cards, methodology steps, and feature lists. SVG so they render crisp at any size.</p>
+
+<h3>Originals · uploaded set</h3>
+<div class="grid" id="grid-orig"></div>
+
+<h3>Extensions · new for the deck system</h3>
+<div class="grid" id="grid-new"></div>
+
+<div class="gen">
+  <h3>Generate new icon</h3>
+  <p>Paste a Lucide glyph (the inner SVG markup — the <code>&lt;path&gt;</code> / <code>&lt;circle&gt;</code> children, viewBox 0&nbsp;0&nbsp;24&nbsp;24) from <a href="https://lucide.dev" target="_blank" style="color:var(--ra-indigo)">lucide.dev</a> and a name. The generator wraps it in the brand circle and produces a download-ready SVG.</p>
+
+  <div class="gen-row">
+    <input id="gen-name" type="text" placeholder="name" value="cog">
+    <textarea id="gen-glyph" placeholder='Paste Lucide inner markup, e.g. &lt;circle cx="12" cy="12" r="3"/&gt;&lt;path .../&gt;'><circle cx="12" cy="12" r="3"/><path d="M19.622 10.395l-1.097-2.65L20 6l-2-2-1.735 1.483-2.707-1.113L12.935 2h-1.954l-.632 2.401-2.645 1.115L6 4 4 6l1.453 1.789-1.08 2.657L2 11v2l2.401.655L5.516 16.3 4 18l2 2 1.791-1.46 2.606 1.072L11 22h2l.604-2.387 2.651-1.098C16.697 18.831 18 20 18 20l2-2-1.484-1.75 1.098-2.652 2.386-.62V11l-2.378-.605z"/></textarea>
+    <button onclick="paint()">Render</button>
+  </div>
+
+  <div class="gen-out">
+    <div id="gen-svg-host"></div>
+    <div class="meta">
+      <div><span class="label">Filename:</span> <span id="gen-fname">cog.svg</span></div>
+      <div style="margin-top:4px"><span class="label">Use:</span> <code>&lt;img src="assets/icons/cog.svg"&gt;</code></div>
+    </div>
+    <button id="copy-btn" onclick="copySvg()">Copy SVG</button>
+  </div>
+</div>
+
+<script>
+  const ORIG = ['code','checklist','team','growth','performance','process','success','innovation','finance','target','discovery','recycle','partner','revenue'];
+  const NEW  = ['database','cloud','shield','lightning','insight','calendar','document','chart','workflow','message','globe','layers'];
+
+  function cell(name) {
+    return `<div class="cell"><img src="../assets/icons/${name}.svg" alt="${name}"><span class="name">${name}</span></div>`;
+  }
+  document.getElementById('grid-orig').innerHTML = ORIG.map(cell).join('');
+  document.getElementById('grid-new').innerHTML  = NEW.map(cell).join('');
+
+  // --- generator ---
+  function buildSvg(name, glyph) {
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" role="img" aria-label="${name} icon">
+  <circle cx="12" cy="12" r="12" fill="#4F60FF"/>
+  <g transform="translate(4 4) scale(0.667)" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    ${glyph}
+  </g>
+</svg>`;
+  }
+  let currentSvg = '';
+  function paint() {
+    const name = (document.getElementById('gen-name').value || 'icon').trim().replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+    const glyph = document.getElementById('gen-glyph').value.trim();
+    currentSvg = buildSvg(name, glyph);
+    document.getElementById('gen-svg-host').innerHTML = currentSvg;
+    document.getElementById('gen-fname').textContent = name + '.svg';
+  }
+  function copySvg() {
+    navigator.clipboard.writeText(currentSvg);
+    const b = document.getElementById('copy-btn');
+    const old = b.textContent;
+    b.textContent = 'Copied ✓';
+    b.classList.add('ok');
+    setTimeout(() => { b.textContent = old; b.classList.remove('ok'); }, 1200);
+  }
+  paint();
+</script>
+
+</body>
+</html>

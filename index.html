@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Carwow Kickoff — Delivery Team Deck</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html,body { margin:0; padding:0; background:#1A1B22; color:#fff; font-family:var(--ra-font-deck-body); height:100%; }
+  *,*::before,*::after { box-sizing:border-box; }
+  .stage { position:fixed; inset:0; display:grid; place-items:center; overflow:hidden; }
+  .frame { width:1280px; height:720px; transform-origin:center; box-shadow:0 30px 90px rgba(0,0,0,0.55); background:#fff; position:relative; }
+  .frame iframe { width:1280px; height:720px; border:0; display:block; }
+  .chrome-top { position:fixed; top:18px; left:18px; right:18px; display:flex; justify-content:space-between; align-items:center; pointer-events:none; z-index:10; font:500 12px/1 var(--ra-font-deck-ui); color:rgba(255,255,255,0.55); letter-spacing:0.06em; text-transform:uppercase; }
+  .chrome-top .brand { display:flex; align-items:center; gap:10px; pointer-events:auto; }
+  .chrome-top .brand img { height:18px; opacity:0.85; }
+  .nav { position:fixed; bottom:22px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:12px; background:rgba(28,30,40,0.92); border:1px solid rgba(255,255,255,0.08); border-radius:999px; padding:8px 10px; z-index:10; backdrop-filter:blur(12px); }
+  .nav button { background:transparent; border:0; color:#fff; width:32px; height:32px; border-radius:50%; cursor:pointer; display:grid; place-items:center; font-size:16px; }
+  .nav button:hover { background:rgba(255,255,255,0.1); }
+  .nav button:disabled { opacity:0.3; cursor:not-allowed; }
+  .nav .counter { font:600 13px/1 var(--ra-font-deck-ui); color:#fff; padding:0 10px; min-width:60px; text-align:center; letter-spacing:0.04em; }
+  .nav .counter small { color:rgba(255,255,255,0.5); font-weight:400; margin-left:2px; }
+  .nav .label { font:500 12px/1 var(--ra-font-deck-ui); color:rgba(255,255,255,0.7); padding-right:10px; border-left:1px solid rgba(255,255,255,0.1); padding-left:14px; margin-left:4px; max-width:280px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+</style>
+</head><body>
+<div class="chrome-top">
+  <div class="brand"><img src="assets/logo-white-blue.svg" alt=""><span>Carwow · Delivery team kickoff</span></div>
+  <div id="slide-name">01 · Title</div>
+</div>
+<div class="stage"><div class="frame"><iframe id="slide" src="slides/01-title.html"></iframe></div></div>
+<div class="nav">
+  <button id="prev">‹</button>
+  <span class="counter"><span id="cur">1</span><small>/17</small></span>
+  <button id="next">›</button>
+  <span class="label" id="nav-label">Title</span>
+</div>
+<script>
+  const slides = [
+    {src:'slides/01-title.html', label:'Title'},
+    {src:'slides/02-purpose.html', label:'What this session is for'},
+    {src:'slides/03-carwow.html', label:'Who is Carwow?'},
+    {src:'slides/04-stack.html', label:'The current data stack'},
+    {src:'slides/05-why-now.html', label:'Why now · three forcing functions'},
+    {src:'slides/06-stakeholders.html', label:'Stakeholders'},
+    {src:'slides/07-approach.html', label:'Delivery approach'},
+    {src:'slides/08-deliverables.html', label:'What discovery must deliver'},
+    {src:'slides/09-workshops.html', label:'Workshops · in / out of scope'},
+    {src:'slides/10-gyc-problem.html', label:'The GetYourCar problem'},
+    {src:'slides/11-oqs.html', label:'Open questions'},
+    {src:'slides/12-schedule.html', label:'Week 1 schedule'},
+    {src:'slides/13-gaps.html', label:'What we don\'t have yet'},
+    {src:'slides/14-ops-notes.html', label:'Operational notes'},
+    {src:'slides/15-good-looks-like.html', label:'What good looks like'},
+    {src:'slides/16-actions.html', label:'Before Monday · actions'},
+    {src:'slides/17-questions.html', label:'Q&A'}
+  ];
+  let i = 0;
+  const iframe = document.getElementById('slide');
+  const cur = document.getElementById('cur');
+  const lbl = document.getElementById('nav-label');
+  const sname = document.getElementById('slide-name');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  function paint() {
+    iframe.src = slides[i].src;
+    cur.textContent = i+1;
+    lbl.textContent = slides[i].label;
+    sname.textContent = String(i+1).padStart(2,'0') + ' · ' + slides[i].label;
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+    try { localStorage.setItem('carwow-kickoff-slide', String(i)); } catch(e) {}
+  }
+  prev.onclick = () => { if (i > 0) { i--; paint(); } };
+  next.onclick = () => { if (i < slides.length-1) { i++; paint(); } };
+  addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') prev.click();
+    else if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') next.click();
+  });
+  try { const s = parseInt(localStorage.getItem('carwow-kickoff-slide') || '0'); if (s >= 0 && s < slides.length) i = s; } catch(e) {}
+  function fit() {
+    const f = document.querySelector('.frame');
+    const r = Math.min(innerWidth/1280, (innerHeight-80)/720, 1);
+    f.style.transform = 'scale(' + r + ')';
+  }
+  fit(); addEventListener('resize', fit);
+  paint();
+</script>
+</body></html>

@@ -1,0 +1,322 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "slides/**",
+              "ui_kits/website/**",
+              "wire/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Google Sans|Beatrice|Inter|IBM Plex Mono|Lato|Roboto))/i]",
+        "message": "Font not provided by the design system. Available: Google Sans, Beatrice, Inter, IBM Plex Mono, Lato, Roboto."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CaseStudies'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|key|ref|className|style|children)$/]",
+        "message": "<CaseStudies> doesn't accept that prop. Declared props: className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChallengeCards'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|key|ref|className|style|children)$/]",
+        "message": "<ChallengeCards> doesn't accept that prop. Declared props: className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Footer'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|key|ref|className|style|children)$/]",
+        "message": "<Footer> doesn't accept that prop. Declared props: className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hero'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|key|ref|className|style|children)$/]",
+        "message": "<Hero> doesn't accept that prop. Declared props: className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Methodology'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|key|ref|className|style|children)$/]",
+        "message": "<Methodology> doesn't accept that prop. Declared props: className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Navigation'] > JSXAttribute > JSXIdentifier[name!=/^(?:className|key|ref|className|style|children)$/]",
+        "message": "<Navigation> doesn't accept that prop. Declared props: className."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "CaseStudies": {
+        "replaces": []
+      },
+      "ChallengeCards": {
+        "replaces": []
+      },
+      "Footer": {
+        "replaces": []
+      },
+      "Hero": {
+        "replaces": []
+      },
+      "Methodology": {
+        "replaces": []
+      },
+      "Navigation": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--ra-bg",
+      "--ra-bg-alt",
+      "--ra-border",
+      "--ra-border-strong",
+      "--ra-container",
+      "--ra-container-wide",
+      "--ra-danger",
+      "--ra-dur-1",
+      "--ra-dur-2",
+      "--ra-dur-3",
+      "--ra-dur-4",
+      "--ra-ease",
+      "--ra-ease-in",
+      "--ra-ease-out",
+      "--ra-fg",
+      "--ra-fg-faint",
+      "--ra-fg-muted",
+      "--ra-focus-ring",
+      "--ra-font-body",
+      "--ra-font-deck-body",
+      "--ra-font-deck-display",
+      "--ra-font-deck-ui",
+      "--ra-font-display",
+      "--ra-font-mono",
+      "--ra-font-ui",
+      "--ra-font-web",
+      "--ra-fs-body",
+      "--ra-fs-display",
+      "--ra-fs-h1",
+      "--ra-fs-h2",
+      "--ra-fs-h3",
+      "--ra-fs-h4",
+      "--ra-fs-lede",
+      "--ra-fs-sm",
+      "--ra-fs-xs",
+      "--ra-fw-bold",
+      "--ra-fw-light",
+      "--ra-fw-medium",
+      "--ra-fw-regular",
+      "--ra-fw-semibold",
+      "--ra-gutter",
+      "--ra-indigo",
+      "--ra-indigo-deep",
+      "--ra-indigo-haze",
+      "--ra-indigo-soft",
+      "--ra-info",
+      "--ra-ink",
+      "--ra-ink-40",
+      "--ra-ink-60",
+      "--ra-ink-70",
+      "--ra-ink-80",
+      "--ra-ink-90",
+      "--ra-lh-body",
+      "--ra-lh-relaxed",
+      "--ra-lh-snug",
+      "--ra-lh-tight",
+      "--ra-line",
+      "--ra-line-soft",
+      "--ra-link",
+      "--ra-link-hover",
+      "--ra-mint",
+      "--ra-mint-mid",
+      "--ra-mint-soft",
+      "--ra-mute",
+      "--ra-mute-strong",
+      "--ra-paper",
+      "--ra-paper-2",
+      "--ra-paper-3",
+      "--ra-peach",
+      "--ra-peach-soft",
+      "--ra-r-2xl",
+      "--ra-r-lg",
+      "--ra-r-md",
+      "--ra-r-pill",
+      "--ra-r-sm",
+      "--ra-r-xl",
+      "--ra-r-xs",
+      "--ra-s-1",
+      "--ra-s-10",
+      "--ra-s-2",
+      "--ra-s-3",
+      "--ra-s-4",
+      "--ra-s-5",
+      "--ra-s-6",
+      "--ra-s-7",
+      "--ra-s-8",
+      "--ra-s-9",
+      "--ra-shadow-focus",
+      "--ra-shadow-lg",
+      "--ra-shadow-md",
+      "--ra-shadow-sm",
+      "--ra-shadow-tinted-lg",
+      "--ra-shadow-tinted-sm",
+      "--ra-shadow-xs",
+      "--ra-sky",
+      "--ra-sky-soft",
+      "--ra-success",
+      "--ra-tracking-eyebrow",
+      "--ra-tracking-flat",
+      "--ra-tracking-snug",
+      "--ra-tracking-tight",
+      "--ra-tracking-wide",
+      "--ra-violet",
+      "--ra-violet-soft",
+      "--ra-warning"
+    ],
+    "tokenKinds": {
+      "--ra-indigo": "color",
+      "--ra-indigo-deep": "color",
+      "--ra-violet": "color",
+      "--ra-mint": "color",
+      "--ra-sky": "color",
+      "--ra-peach": "color",
+      "--ra-violet-soft": "color",
+      "--ra-indigo-soft": "color",
+      "--ra-indigo-haze": "color",
+      "--ra-mint-soft": "color",
+      "--ra-mint-mid": "color",
+      "--ra-sky-soft": "color",
+      "--ra-peach-soft": "color",
+      "--ra-ink": "color",
+      "--ra-ink-90": "color",
+      "--ra-ink-80": "color",
+      "--ra-ink-70": "color",
+      "--ra-ink-60": "color",
+      "--ra-ink-40": "color",
+      "--ra-paper": "color",
+      "--ra-paper-2": "color",
+      "--ra-paper-3": "color",
+      "--ra-line": "color",
+      "--ra-line-soft": "color",
+      "--ra-mute": "color",
+      "--ra-mute-strong": "color",
+      "--ra-bg": "color",
+      "--ra-bg-alt": "color",
+      "--ra-fg": "color",
+      "--ra-fg-muted": "color",
+      "--ra-fg-faint": "color",
+      "--ra-link": "color",
+      "--ra-link-hover": "color",
+      "--ra-focus-ring": "color",
+      "--ra-border": "color",
+      "--ra-border-strong": "color",
+      "--ra-success": "color",
+      "--ra-warning": "color",
+      "--ra-danger": "color",
+      "--ra-info": "color",
+      "--ra-font-display": "font",
+      "--ra-font-body": "font",
+      "--ra-font-ui": "font",
+      "--ra-font-web": "font",
+      "--ra-font-deck-display": "font",
+      "--ra-font-deck-body": "font",
+      "--ra-font-deck-ui": "font",
+      "--ra-font-mono": "font",
+      "--ra-fs-display": "font",
+      "--ra-fs-h1": "font",
+      "--ra-fs-h2": "font",
+      "--ra-fs-h3": "font",
+      "--ra-fs-h4": "font",
+      "--ra-fs-lede": "font",
+      "--ra-fs-body": "font",
+      "--ra-fs-sm": "font",
+      "--ra-fs-xs": "font",
+      "--ra-lh-tight": "font",
+      "--ra-lh-snug": "font",
+      "--ra-lh-body": "font",
+      "--ra-lh-relaxed": "font",
+      "--ra-fw-light": "font",
+      "--ra-fw-regular": "font",
+      "--ra-fw-medium": "font",
+      "--ra-fw-semibold": "font",
+      "--ra-fw-bold": "font",
+      "--ra-tracking-tight": "font",
+      "--ra-tracking-snug": "font",
+      "--ra-tracking-flat": "font",
+      "--ra-tracking-wide": "font",
+      "--ra-tracking-eyebrow": "font",
+      "--ra-s-1": "spacing",
+      "--ra-s-2": "spacing",
+      "--ra-s-3": "spacing",
+      "--ra-s-4": "spacing",
+      "--ra-s-5": "spacing",
+      "--ra-s-6": "spacing",
+      "--ra-s-7": "spacing",
+      "--ra-s-8": "spacing",
+      "--ra-s-9": "spacing",
+      "--ra-s-10": "spacing",
+      "--ra-r-xs": "spacing",
+      "--ra-r-sm": "spacing",
+      "--ra-r-md": "spacing",
+      "--ra-r-lg": "spacing",
+      "--ra-r-xl": "spacing",
+      "--ra-r-2xl": "spacing",
+      "--ra-r-pill": "spacing",
+      "--ra-shadow-xs": "shadow",
+      "--ra-shadow-sm": "shadow",
+      "--ra-shadow-md": "shadow",
+      "--ra-shadow-lg": "shadow",
+      "--ra-shadow-tinted-sm": "shadow",
+      "--ra-shadow-tinted-lg": "shadow",
+      "--ra-shadow-focus": "shadow",
+      "--ra-ease": "other",
+      "--ra-ease-in": "other",
+      "--ra-ease-out": "other",
+      "--ra-dur-1": "other",
+      "--ra-dur-2": "other",
+      "--ra-dur-3": "other",
+      "--ra-dur-4": "other",
+      "--ra-container": "spacing",
+      "--ra-container-wide": "spacing",
+      "--ra-gutter": "spacing"
+    },
+    "fontFamilies": [
+      "Beatrice",
+      "Google Sans",
+      "IBM Plex Mono",
+      "Inter",
+      "Lato",
+      "Roboto"
+    ]
+  }
+}

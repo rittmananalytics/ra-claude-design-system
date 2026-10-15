@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- @dsCard group="Slides" name="slide-01-title-internal" subtitle="Title slide — internal team variant" viewport="1280x720" -->
+<html lang="en"><head><meta charset="utf-8"><title>Title slide — internal</title>
+<link rel="stylesheet" href="../colors_and_type.css?v=2">
+<link rel="stylesheet" href="slides.css?v=2">
+<style>
+  .ti-bg::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(120% 90% at 0% 0%, rgba(79,96,255,0.10) 0%, rgba(79,96,255,0.04) 30%, transparent 60%);
+    pointer-events:none; }
+  .ti-eyebrow { position:absolute; left:56px; top:200px; font:600 16px/1.2 var(--ra-font-deck-ui);
+    color:#87A0FF; letter-spacing:0.18em; text-transform:uppercase; margin:0; z-index:2; }
+  .ti-title { position:absolute; left:56px; right:56px; top:236px; font:700 78px/1.05 var(--ra-font-deck-display);
+    letter-spacing:-0.025em; margin:0; max-width:920px; color:#fff; z-index:2; }
+  .ti-presenters { position:absolute; left:56px; bottom:130px; z-index:2;
+    font:500 22px/1.5 var(--ra-font-deck-body); color:rgba(255,255,255,.85); margin:0; }
+  .ti-presenters .sep { color:rgba(255,255,255,.35); margin:0 14px; }
+  .ti-partner { position:absolute; bottom:30px; right:48px; height:48px; z-index:5; }
+  .ti-partner img { height:100%; display:block; opacity:0.95; }
+</style>
+</head><body>
+<div class="ra-slide-stage">
+  <div class="ra-slide s-dark ti-bg" data-screen-label="01 Title — internal">
+    <a class="ra-logo"><img src="../assets/logo-white-blue.svg" alt="Rittman Analytics"></a>
+    <p class="ti-eyebrow">April 14th 2027</p>
+    <h1 class="ti-title">FY 2027 All-Hands<br>Kick-Off</h1>
+    <p class="ti-presenters">
+      Mark Rittman, CEO<span class="sep">|</span>Lewis Baker, COO/CRO<span class="sep">|</span>Lydia Blackley, HoD
+    </p>
+    <div class="ti-partner"><img src="../assets/template/google_partner.png" alt="Google Cloud Partner"></div>
+  </div>
+</div>
+<script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(window.innerWidth/1280,window.innerHeight/720);s.style.transform=`scale(${r})`;};fit();addEventListener('resize',fit);})();</script>
+</body></html>

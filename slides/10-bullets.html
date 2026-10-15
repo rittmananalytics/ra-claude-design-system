@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Three-column content</title>
+<link rel="stylesheet" href="../colors_and_type.css?v=2">
+<link rel="stylesheet" href="slides.css?v=2">
+<style>
+  .c-lead { font:400 20px/1.5 var(--ra-font-deck-body); color:#181B25; margin:18px 0 32px; max-width:1100px; }
+  .c-cols { flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:32px; min-height:0; }
+  .c-col { padding-right:8px; }
+  .c-col-num { display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px;
+    border-radius:50%; background:#4F60FF; color:#fff; font:600 22px/1 var(--ra-font-deck-display); margin-bottom:18px; }
+  .c-col h3 { font:600 22px/1.25 var(--ra-font-deck-display); letter-spacing:-0.005em; margin:0 0 14px; color:#181B25; }
+  .c-col p { font:400 16px/1.5 var(--ra-font-deck-body); color:#2F3340; margin:0; }
+</style>
+</head><body>
+<div class="ra-slide-stage">
+  <div class="ra-slide s-light" data-screen-label="10 Bullets">
+    <a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt="Rittman Analytics"></a>
+    <div class="ra-body">
+      <p class="ra-eyebrow">Delivery Team Strategy</p>
+      <h2 class="ra-title sm" style="max-width:880px;">Make delivery predictable.</h2>
+      <p class="c-lead">Sprints finishing on time is not the same as a project being on track. From Q2 we manage delivery at two levels — sprint and milestone — and every engagement has a defined schedule from day one.</p>
+      <div class="c-cols">
+        <div class="c-col">
+          <div class="c-col-num">1</div>
+          <h3>Every engagement has a milestone schedule</h3>
+          <p>Defined within 10 days of kickoff. If the client hasn't provided one, we propose one. First deliverable agreed at the same time — small enough to ship fast, meaningful enough to matter.</p>
+        </div>
+        <div class="c-col">
+          <div class="c-col-num">2</div>
+          <h3>Manage sprints and epics — not just sprints</h3>
+          <p>Track health at both levels. A project is green when the milestone is intact, not just because last week's sprint closed. T&amp;M and fixed-price are managed differently; neither runs itself.</p>
+        </div>
+        <div class="c-col">
+          <div class="c-col-num">3</div>
+          <h3>Red for 14 days needs a recovery plan</h3>
+          <p>Any engagement red for 14+ consecutive days without a written recovery plan is a delivery failure. The plan needs honesty about the cause, a specific action, and a named owner.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ra-foot">
+      <span>© Rittman Analytics 2026</span>
+      <span>T: +44 (0)208 058 5951</span>
+      <span>W: rittmananalytics.com</span>
+      <span>E: info@rittmananalytics.com</span>
+    </div>
+  </div>
+</div>
+<script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(window.innerWidth/1280,window.innerHeight/720);s.style.transform=`scale(${r})`;};fit();addEventListener('resize',fit);})();</script>
+</body></html>

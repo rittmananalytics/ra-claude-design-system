@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- @dsCard group="Slides" name="slide-15-team-intros" subtitle="Team introductions slide — 8-up headshots" viewport="1280x720" -->
+<html lang="en"><head><meta charset="utf-8"><title>Team introductions</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="slides.css">
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px 24px;
+    align-content: start;
+    margin-top: 12px;
+  }
+  .team-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .team-photo {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #F3F0EA;
+    box-shadow: 0 1px 0 rgba(15,26,48,0.06), 0 6px 18px rgba(15,26,48,0.10);
+    flex-shrink: 0;
+  }
+  .team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .team-name {
+    font-family: var(--ra-font-deck-display);
+    font-size: 18px; font-weight: 600;
+    color: #0F1A30;
+    margin: 14px 0 2px;
+    letter-spacing: -0.005em;
+  }
+  .team-role {
+    font-family: var(--ra-font-deck-body);
+    font-size: 13px;
+    color: #4F60FF;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .team-bio {
+    font-family: var(--ra-font-deck-body);
+    font-size: 12px;
+    color: #4A5061;
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+</style>
+</head>
+<body>
+<div class="ra-slide-stage">
+<div class="ra-slide" data-screen-label="15 Team — introductions">
+
+  <img class="ra-corner-logo" src="../assets/logo-black-blue.svg" alt="">
+
+  <div class="ra-body">
+    <div class="ra-eyebrow">Introductions</div>
+    <h1 class="ra-title md">Your Rittman Analytics team</h1>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/mark-rittman.png" alt="Mark Rittman"></div>
+        <div class="team-name">Mark Rittman</div>
+        <div class="team-role">CEO &amp; Founder</div>
+        <div class="team-bio">25+ years in analytics. Oracle ACE Director, author, podcast host. Leads strategy &amp; client engagement.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/lewis-baker.png" alt="Lewis Baker"></div>
+        <div class="team-name">Lewis Baker</div>
+        <div class="team-role">COO / CRO</div>
+        <div class="team-bio">Operations and revenue lead. Scales delivery, partnerships and commercial across the practice.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/lydia-blackley.png" alt="Lydia Blackley"></div>
+        <div class="team-name">Lydia Blackley</div>
+        <div class="team-role">Head of Delivery</div>
+        <div class="team-bio">Programme management and engagement quality. Owns delivery cadence on every client account.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/alex-caldwell.png" alt="Alex Caldwell"></div>
+        <div class="team-name">Alex Caldwell</div>
+        <div class="team-role">Co-Founder · Solutions</div>
+        <div class="team-bio">Solutions architect. Looker, dbt and BigQuery specialist; designs the technical approach.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/tim-griew.png" alt="Tim Griew"></div>
+        <div class="team-name">Tim Griew</div>
+        <div class="team-role">Senior Consultant</div>
+        <div class="team-bio">Modern data stack lead. dbt, Fivetran, Snowflake delivery for B2B SaaS clients.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/saverro-suseno.png" alt="Saverro Suseno"></div>
+        <div class="team-name">Saverro Suseno</div>
+        <div class="team-role">Senior Consultant</div>
+        <div class="team-bio">Analytics engineer. Semantic modelling, LookML and Cube specialist across EU clients.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/olivier-dupuis.png" alt="Olivier Dupuis"></div>
+        <div class="team-name">Olivier Dupuis</div>
+        <div class="team-role">Senior Consultant</div>
+        <div class="team-bio">Marketing &amp; attribution analytics. GA4, Segment, paid-media measurement and MMM.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="../assets/team/jordan-ilyat.png" alt="Jordan Ilyat"></div>
+        <div class="team-name">Jordan Ilyat</div>
+        <div class="team-role">Senior Consultant</div>
+        <div class="team-bio">Data engineering &amp; ML. Streaming pipelines, Vertex AI and conversational analytics builds.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ra-foot">
+    <span>© Rittman Analytics 2026</span>
+    <span>T: +44 (0)208 058 5951</span>
+    <span>W: rittmananalytics.com</span>
+    <span>E: info@rittmananalytics.com</span>
+  </div>
+</div>
+</div>
+<script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(window.innerWidth/1280,window.innerHeight/720);s.style.transform=`scale(${r})`};fit();addEventListener('resize',fit);})();</script>
+</body></html>

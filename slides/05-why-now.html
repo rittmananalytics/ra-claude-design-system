@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Why this project is happening now</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../slides.css">
+<style>
+  .ra-foot { font-size: 12px; }
+  .ra-foot #pageno { color: #9BA1A6; }
+  .ra-foot.on-dark #pageno { color: rgba(255,255,255,0.45); }
+</style>
+</head><body>
+<div class="ra-slide-stage">
+<div class="ra-slide s-light" data-screen-label="05 Why this project is happening now">
+  <a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt=""></a>
+  
+  <style>
+    .ff-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-top:14px; }
+    .ff-card { background:#F7F7FA; border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; gap:8px; }
+    .ff-num { font:700 28px/1 var(--ra-font-deck-display); color:#4F60FF; letter-spacing:-0.02em; }
+    .ff-name { font:700 17px/1.25 var(--ra-font-deck-display); color:#181B25; }
+    .ff-body { font:400 14px/1.5 var(--ra-font-deck-body); color:#2F3340; }
+    .penalty { margin-top:18px; padding:18px 22px; background:#1F2433; color:#fff; border-radius:8px; display:flex; gap:18px; align-items:center; }
+    .penalty .amt { font:700 38px/1 var(--ra-font-deck-display); color:#FF8D73; letter-spacing:-0.02em; }
+    .penalty .lbl { font:400 15px/1.45 var(--ra-font-deck-body); color:rgba(255,255,255,.85); }
+    .penalty .lbl strong { color:#fff; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Context · timing</p>
+    <h2 class="ra-title sm">Why this project is happening now.</h2>
+    <p class="ra-sub" style="font-size:18px; margin:10px 0 14px;">Three forcing functions, all hitting the same window.</p>
+    <div class="ff-grid">
+      <div class="ff-card">
+        <span class="ff-num">01</span>
+        <span class="ff-name">Tableau will not renew.</span>
+        <p class="ff-body">Contract ends <strong>August 2026</strong>. They declined even a one-month extension. If Carwow is not off Tableau by end of August, they have no BI tool. <strong>Non-negotiable.</strong></p>
+      </div>
+      <div class="ff-card">
+        <span class="ff-num">02</span>
+        <span class="ff-name">Snowflake renews in September.</span>
+        <p class="ff-body">The natural cutover moment. Staying past September means another <strong>12-month contract at significant cost</strong>.</p>
+      </div>
+      <div class="ff-card">
+        <span class="ff-num">03</span>
+        <span class="ff-name">Google PSF funding.</span>
+        <p class="ff-body">Google is co-funding part of this engagement, contingent on Carwow migrating to GCP/BigQuery. This drove the <strong>fixed-price contract structure</strong>.</p>
+      </div>
+    </div>
+    <div class="penalty">
+      <span class="amt">£50K</span>
+      <span class="lbl"><strong>Contractual penalty</strong> if Looker is not live before the Tableau switch-off at end of August. The Tableau deadline drives everything about sequencing.</span>
+    </div>
+  </div>
+
+  
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">05 / 17</span>
+    </div>
+</div>
+</div>
+<script>(()=>{
+  const s=document.querySelector('.ra-slide');
+  const fit=()=>{const r=Math.min(innerWidth/1280, innerHeight/720); s.style.transform='scale('+r+')';};
+  fit(); addEventListener('resize',fit);
+})();</script>
+</body></html>

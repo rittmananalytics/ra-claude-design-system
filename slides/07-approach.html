@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>The delivery approach</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="../slides.css">
+<style>.ra-foot{font-size:12px}.ra-foot #pageno{color:#9BA1A6}.ra-foot.on-dark #pageno{color:rgba(255,255,255,0.45)}</style>
+</head><body>
+<div class="ra-slide-stage"><div class="ra-slide s-light" data-screen-label="07 The delivery approach">
+<a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .ap-banner { margin:8px 0 18px; padding:14px 18px; background:#FFE9E4; border-left:3px solid #FF8D73; border-radius:6px; font:500 14px/1.45 var(--ra-font-deck-body); color:#4F1B0F; }
+    .ap-banner strong { font-weight:700; color:#1F1108; }
+    .ap-steps { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:14px; min-height:0; }
+    .ap-step { background:#F7F7FA; border-radius:10px; padding:16px 18px; display:flex; flex-direction:column; gap:6px; position:relative; }
+    .ap-step .n { font:700 12px/1 var(--ra-font-deck-ui); letter-spacing:0.16em; text-transform:uppercase; color:#4F60FF; }
+    .ap-step .who { font:600 11px/1 var(--ra-font-deck-ui); letter-spacing:0.1em; text-transform:uppercase; color:#FF8D73; }
+    .ap-step h3 { font:700 17px/1.25 var(--ra-font-deck-display); margin:2px 0 6px; color:#181B25; letter-spacing:-0.005em; }
+    .ap-step p { font:400 13px/1.45 var(--ra-font-deck-body); color:#2F3340; margin:0; }
+    .ap-step .who-row { display:flex; justify-content:space-between; align-items:baseline; }
+    .ap-foot { margin-top:14px; padding:14px 18px; background:#EFF0FF; border-radius:8px; font:400 13.5px/1.5 var(--ra-font-deck-body); color:#1F2433; }
+    .ap-foot strong { font-weight:700; color:#181B25; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Approach · read carefully</p>
+    <h2 class="ra-title sm" style="font-size:36px; margin-bottom:8px;">The delivery approach.<span style="color:#FF8D73;"> It has changed.</span></h2>
+    <p class="ap-banner">The SOW's Appendix [X] described a <strong>projection-based remodelling</strong> on top of the existing gold layer. <strong>That approach has been superseded</strong> by what was agreed in the onsite planning session on 13 May. The current approach is:</p>
+    <div class="ap-steps">
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 01 · Phase 1</span><span class="who">RA</span></div>
+        <h3>Lift and shift.</h3>
+        <p>Copy all Snowflake data to BigQuery <strong>exactly as-is</strong>. No transformation, no remodelling. RA handles Fivetran repointing, BQ Transfer Service for bulk historical, dbt syntax conversion. Gold layer lands in BigQuery in the same shape.</p>
+      </div>
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 02 · Phase 1</span><span class="who">Steph / Carwow</span></div>
+        <h3>Looker on as-is data.</h3>
+        <p>Steph puts Looker directly on the lifted BigQuery data. Hits the <strong>August Tableau deadline</strong> without RA building a projection layer. RA supports and advises; this Looker implementation is primarily Steph's work.</p>
+      </div>
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 03 · Discovery sprint</span><span class="who">RA</span></div>
+        <h3>New gold layer design.</h3>
+        <p>RA designs the proper new gold layer from first principles. <strong>Genuine ground-up entity modelling</strong> &mdash; conceptual, logical, physical specs. Begins in this discovery sprint.</p>
+      </div>
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 04 · Phase 2 (separate SOW)</span><span class="who">RA</span></div>
+        <h3>New gold layer build.</h3>
+        <p>Build and test the new entity-based gold layer in BigQuery. Progressively migrate Looker explores. Properly address entity join problems (incl. GYC). <strong>12–24 month programme &mdash; this is what Carwow actually bought</strong> when they chose us over a lift-and-shift vendor.</p>
+      </div>
+    </div>
+    <p class="ap-foot">Implication for this sprint: the workshops are <strong>not projection-scoping sessions. They are genuine design sessions for the new gold layer.</strong> Appendix [X]'s exclusions about "end-user or engineer-led remodelling workshops" were written for the old approach and are not operative constraints on what we design in discovery.</p>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">07 / 17</span>
+    </div>
+</div></div><script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(innerWidth/1280, innerHeight/720); s.style.transform='scale('+r+')';};fit(); addEventListener('resize',fit);})();</script>
+</body></html>

@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>The current data stack</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../slides.css">
+<style>
+  .ra-foot { font-size: 12px; }
+  .ra-foot #pageno { color: #9BA1A6; }
+  .ra-foot.on-dark #pageno { color: rgba(255,255,255,0.45); }
+</style>
+</head><body>
+<div class="ra-slide-stage">
+<div class="ra-slide s-light" data-screen-label="04 The current data stack">
+  <a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt=""></a>
+  
+  <style>
+    .stack-grid { margin-top:14px; border-top:1px solid #E1E1E9; }
+    .stack-row { display:grid; grid-template-columns:160px 260px 1fr; gap:24px; padding:12px 4px; border-bottom:1px solid #E1E1E9; align-items:baseline; }
+    .stack-layer { font:600 13px/1 var(--ra-font-deck-ui); text-transform:uppercase; letter-spacing:0.12em; color:#4F60FF; }
+    .stack-tech { font:600 18px/1.3 var(--ra-font-deck-display); color:#181B25; letter-spacing:-0.005em; }
+    .stack-notes { font:400 15px/1.45 var(--ra-font-deck-body); color:#4F5564; }
+    .stack-callout { margin-top:24px; padding:18px 22px; background:#EFF0FF; border-radius:8px; font:400 16px/1.5 var(--ra-font-deck-body); color:#1F2433; }
+    .stack-callout strong { font-weight:700; color:#181B25; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Context · stack</p>
+    <h2 class="ra-title sm">The current data stack.</h2>
+    <div class="stack-grid">
+      <div class="stack-row"><span class="stack-layer">Ingestion</span><span class="stack-tech">Fivetran</span><span class="stack-notes">Multiple sources</span></div>
+      <div class="stack-row"><span class="stack-layer">Warehouse</span><span class="stack-tech">Snowflake</span><span class="stack-notes">~210–240 TB</span></div>
+      <div class="stack-row"><span class="stack-layer">Transformation</span><span class="stack-tech">dbt · Snowflake project</span><span class="stack-notes">~1,200–1,500 models</span></div>
+      <div class="stack-row"><span class="stack-layer">Reverse ETL</span><span class="stack-tech">Hightouch</span><span class="stack-notes">544 syncs</span></div>
+      <div class="stack-row"><span class="stack-layer">BI</span><span class="stack-tech">Tableau + Metabase</span><span class="stack-notes">27–40 active Tableau dashboards</span></div>
+      <div class="stack-row"><span class="stack-layer">Gold layer</span><span class="stack-tech">~73 folders · ~17 domains</span><span class="stack-notes">High redundancy, no single owner, use-case-specific models duplicated across old + new schema versions</span></div>
+    </div>
+    <p class="stack-callout">The gold layer problem in one sentence: <strong>analysts have been building use-case-specific models for four years with no central architecture</strong>, leaving duplicated metrics across multiple tables, four separate customer schemas, and no reliable way to answer "does this definition already exist somewhere?"</p>
+  </div>
+
+  
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">04 / 17</span>
+    </div>
+</div>
+</div>
+<script>(()=>{
+  const s=document.querySelector('.ra-slide');
+  const fit=()=>{const r=Math.min(innerWidth/1280, innerHeight/720); s.style.transform='scale('+r+')';};
+  fit(); addEventListener('resize',fit);
+})();</script>
+</body></html>

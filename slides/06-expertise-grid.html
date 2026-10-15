@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Expertise grid</title>
+<link rel="stylesheet" href="../colors_and_type.css?v=2">
+<link rel="stylesheet" href="slides.css?v=2">
+<style>
+  .ex-grid { flex:1; display:grid; grid-template-columns:1.05fr 1fr 1fr; gap:28px; min-height:0; align-items:stretch; }
+  .ex-col { background:#F7F7FA; border-radius:12px; padding:22px 24px 22px; display:flex; flex-direction:column; gap:12px; min-height:0; overflow:hidden; }
+  .ex-col h3 { font:700 22px/1.2 var(--ra-font-deck-display); color:#181B25; margin:0; letter-spacing:-0.005em; }
+  .ex-col h3 .num { display:inline-block; font:600 13px/1 var(--ra-font-deck-ui); color:#4F60FF; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:8px; }
+  .ex-col h3 .num span { display:block; }
+
+  /* col 1 — credential card */
+  .ex-creds { display:flex; flex-direction:column; align-items:center; gap:8px; padding:4px 0 0; text-align:center; }
+  .ex-creds img { width:130px; height:auto; }
+  .ex-creds .cred-meta { font:500 12px/1.4 var(--ra-font-deck-ui); color:#4F5564; max-width:240px; }
+  .ex-list { list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:7px; }
+  .ex-list li { font:400 13px/1.4 var(--ra-font-deck-body); color:#2F3340; padding-left:16px; position:relative; }
+  .ex-list li::before { content:""; position:absolute; left:0; top:7px; width:5px; height:5px; border-radius:50%; background:#4F60FF; }
+
+  /* col 2 — case study cards */
+  .ex-cases { display:flex; flex-direction:column; gap:10px; flex:1; min-height:0; }
+  .ex-case { display:flex; gap:12px; padding:12px; background:#fff; border-radius:8px; border:1px solid #E1E1E9; align-items:center; }
+  .ex-case-thumb { width:64px; height:64px; flex-shrink:0; border-radius:6px; object-fit:cover; background:#F0F0F5; }
+  .ex-case-body { flex:1; min-width:0; }
+  .ex-case-name { font:700 14px/1.2 var(--ra-font-deck-display); color:#181B25; margin:0 0 4px; }
+  .ex-case-desc { font:400 12px/1.4 var(--ra-font-deck-body); color:#4F5564; margin:0 0 4px; }
+  .ex-case-cat { font:600 10px/1 var(--ra-font-deck-ui); color:#4F60FF; text-transform:uppercase; letter-spacing:0.1em; margin:0; }
+
+  /* col 3 — implementations */
+  .ex-impls { display:flex; flex-direction:column; gap:10px; flex:1; }
+  .ex-impl { background:#fff; border:1px solid #E1E1E9; border-radius:8px; padding:11px 14px; }
+  .ex-impl-name { font:700 14px/1.2 var(--ra-font-deck-display); color:#181B25; margin:0 0 3px; }
+  .ex-impl-meta { font:400 12px/1.35 var(--ra-font-deck-body); color:#4F5564; margin:0; }
+</style>
+</head><body>
+<div class="ra-slide-stage">
+  <div class="ra-slide s-light" data-screen-label="06 Expertise grid">
+    <a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt="Rittman Analytics"></a>
+    <div class="ra-body">
+      <p class="ra-eyebrow">Introductions</p>
+      <h2 class="ra-title sm" style="margin-bottom:24px;">Rittman Analytics expertise.</h2>
+      <div class="ex-grid">
+
+        <!-- Col 1: Technical Expertise -->
+        <div class="ex-col">
+          <h3><span class="num"><span>01</span>Technical Expertise</span></h3>
+          <div class="ex-creds">
+            <img src="../assets/illustrations/google-cloud-data-analytics-specialization.png" alt="Google Cloud Data Analytics Specialization">
+            <p class="cred-meta">Google Cloud Data Analytics<br>Specialised Partner</p>
+          </div>
+          <ul class="ex-list">
+            <li>Delivering Looker implementations since 2016</li>
+            <li>Snowflake Data Cloud Services Partner</li>
+            <li>dbt Labs, Segment, Cube, Dagster, Fivetran partners</li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Example Project -->
+        <div class="ex-col">
+          <h3><span class="num"><span>02</span>Example Project</span></h3>
+          <div class="ex-cases">
+            <a class="ex-case" href="https://go.rittmananalytics.com/qubit">
+              <img class="ex-case-thumb" src="../assets/illustrations/case-study-qubit.png" alt="Qubit">
+              <div class="ex-case-body">
+                <p class="ex-case-cat">MarTech</p>
+                <p class="ex-case-name">Qubit.</p>
+                <p class="ex-case-desc">Customer-facing BI &amp; analytics upgrade.</p>
+              </div>
+            </a>
+            <a class="ex-case" href="https://go.rittmananalytics.com/cia">
+              <img class="ex-case-thumb" src="../assets/illustrations/case-study-conversion-interactive.png" alt="Conversion Interactive Agency">
+              <div class="ex-case-body">
+                <p class="ex-case-cat">MarTech</p>
+                <p class="ex-case-name">Conversion Interactive Agency.</p>
+                <p class="ex-case-desc">Embedded analytics platform upgrade.</p>
+              </div>
+            </a>
+            <a class="ex-case" href="https://go.rittmananalytics.com/live-tap">
+              <img class="ex-case-thumb" src="../assets/illustrations/looker-engagement-hero.png" alt="Live Tap">
+              <div class="ex-case-body">
+                <p class="ex-case-cat">SaaS</p>
+                <p class="ex-case-name">Live Tap.</p>
+                <p class="ex-case-desc">Looker engagement &amp; data foundation.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 3: Implementations -->
+        <div class="ex-col">
+          <h3><span class="num"><span>03</span>Implementations</span></h3>
+          <div class="ex-impls">
+            <div class="ex-impl"><p class="ex-impl-name">Looker &amp; LookML</p><p class="ex-impl-meta">Semantic layer · embedded analytics · governance</p></div>
+            <div class="ex-impl"><p class="ex-impl-name">BigQuery &amp; dbt</p><p class="ex-impl-meta">Modern warehouse · data modelling · CI/CD</p></div>
+            <div class="ex-impl"><p class="ex-impl-name">Fivetran &amp; Segment</p><p class="ex-impl-meta">Ingestion · CDP · event tracking</p></div>
+            <div class="ex-impl"><p class="ex-impl-name">Cube &amp; Dagster</p><p class="ex-impl-meta">Headless BI · orchestration</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="ra-foot">
+      <span>© Rittman Analytics 2026</span>
+      <span>T: +44 (0)208 058 5951</span>
+      <span>W: rittmananalytics.com</span>
+      <span>E: info@rittmananalytics.com</span>
+    </div>
+  </div>
+</div>
+<script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(window.innerWidth/1280,window.innerHeight/720);s.style.transform=`scale(${r})`;};fit();addEventListener('resize',fit);})();</script>
+</body></html>

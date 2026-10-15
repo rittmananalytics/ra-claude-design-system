@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Methodology — people / process / technology</title>
+<link rel="stylesheet" href="../colors_and_type.css?v=2">
+<link rel="stylesheet" href="slides.css?v=2">
+<style>
+  .mv-grid { flex:1; display:grid; grid-template-columns:1.05fr 1fr; gap:48px; min-height:0; align-items:start; }
+  .mv-left { display:flex; flex-direction:column; gap:18px; }
+  .mv-lead { font:400 22px/1.45 var(--ra-font-deck-body); color:#4F5564; margin:0; max-width:560px; }
+  .mv-lead strong { color:#181B25; font-weight:600; }
+
+  .mv-pillars { display:flex; flex-direction:column; gap:0; margin-top:4px; }
+  .mv-pillar { display:grid; grid-template-columns:auto 1fr; column-gap:14px; row-gap:2px; align-items:start; padding:11px 0; border-top:1px solid #E1E1E9; }
+  .mv-pillar:last-child { border-bottom:1px solid #E1E1E9; }
+  .mv-dot { width:14px; height:14px; border-radius:50%; margin-top:6px; }
+  .mv-dot.people     { background:#AD86FF; }
+  .mv-dot.process    { background:#5C6DFF; }
+  .mv-dot.technology { background:#7BD389; }
+  .mv-pillar h4 { font:700 18px/1.2 var(--ra-font-deck-display); color:#181B25; margin:0; letter-spacing:-0.005em; }
+  .mv-pillar p  { grid-column:2; font:400 14px/1.5 var(--ra-font-deck-body); color:#4F5564; margin:0; }
+
+  .mv-right { display:flex; align-items:center; justify-content:center; min-height:0; }
+  .mv-right svg { width:100%; height:auto; max-height:460px; display:block; }
+</style>
+</head><body>
+<div class="ra-slide-stage">
+  <div class="ra-slide s-light" data-screen-label="07 Methodology — Venn">
+    <a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt="Rittman Analytics"></a>
+    <div class="ra-body">
+      <p class="ra-eyebrow">Our approach</p>
+      <h2 class="ra-title sm" style="margin-bottom:18px;">A balanced approach to data &amp; analytics.</h2>
+
+      <div class="mv-grid">
+        <div class="mv-left">
+          <p class="mv-lead">We balance <strong>People</strong>, <strong>Process</strong> and <strong>Technology</strong> — because a modern data stack only delivers value when the team, the workflow and the tools are designed together.</p>
+
+          <div class="mv-pillars">
+            <div class="mv-pillar">
+              <span class="mv-dot people"></span>
+              <h4>People</h4>
+              <p>Senior consultants embedded with your team. Knowledge transfer and enablement built into every engagement.</p>
+            </div>
+            <div class="mv-pillar">
+              <span class="mv-dot process"></span>
+              <h4>Process</h4>
+              <p>Modern data engineering practice — version control, CI/CD, testing and documentation as standard.</p>
+            </div>
+            <div class="mv-pillar">
+              <span class="mv-dot technology"></span>
+              <h4>Technology</h4>
+              <p>Looker, BigQuery, dbt, Cube, Fivetran, Segment — best-in-class stacks tailored to where you are today.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mv-right">
+          <!-- Custom Venn so labels render reliably (source SVG had outlined-path text) -->
+          <svg viewBox="0 0 600 540" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <style>
+                .vlabel { font: 700 22px var(--ra-font-deck-display, 'Geist', sans-serif); fill:#181B25; }
+                .vcenter { font: 700 18px var(--ra-font-deck-display, 'Geist', sans-serif); fill:#181B25; }
+              </style>
+            </defs>
+            <g>
+              <circle cx="300" cy="180" r="160" fill="#AD86FF" fill-opacity="0.55"/>
+              <circle cx="220" cy="340" r="160" fill="#5C6DFF" fill-opacity="0.55"/>
+              <circle cx="380" cy="340" r="160" fill="#7BD389" fill-opacity="0.55"/>
+            </g>
+            <text class="vlabel" x="300" y="60"  text-anchor="middle">People</text>
+            <text class="vlabel" x="100" y="460" text-anchor="middle">Process</text>
+            <text class="vlabel" x="500" y="460" text-anchor="middle">Technology</text>
+            <text class="vcenter" x="300" y="290" text-anchor="middle">Insight</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="ra-foot">
+      <span>© Rittman Analytics 2026</span>
+      <span>T: +44 (0)208 058 5951</span>
+      <span>W: rittmananalytics.com</span>
+      <span>E: info@rittmananalytics.com</span>
+    </div>
+  </div>
+</div>
+<script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(window.innerWidth/1280,window.innerHeight/720);s.style.transform=`scale(${r})`;};fit();addEventListener('resize',fit);})();</script>
+</body></html>

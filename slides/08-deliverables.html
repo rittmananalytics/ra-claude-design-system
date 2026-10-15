@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>What the discovery sprint must deliver</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="../slides.css">
+<style>.ra-foot{font-size:12px}.ra-foot #pageno{color:#9BA1A6}.ra-foot.on-dark #pageno{color:rgba(255,255,255,0.45)}</style>
+</head><body>
+<div class="ra-slide-stage"><div class="ra-slide s-light" data-screen-label="08 What the discovery sprint must deliver">
+<a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .dlv-head { display:flex; gap:24px; margin:8px 0 14px; }
+    .dlv-head .m { font:700 22px/1 var(--ra-font-deck-display); color:#4F60FF; letter-spacing:-0.01em; }
+    .dlv-head .m small { display:block; font:500 11px/1 var(--ra-font-deck-ui); color:#6B7280; letter-spacing:0.1em; text-transform:uppercase; margin-top:4px; font-weight:600; }
+    .dlv-grid { flex:1; display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; min-height:0; }
+    .dlv { background:#F7F7FA; border-radius:8px; padding:14px 14px 12px; display:flex; flex-direction:column; gap:8px; }
+    .dlv .n { font:700 14px/1 var(--ra-font-deck-display); color:#4F60FF; }
+    .dlv h3 { font:700 14px/1.25 var(--ra-font-deck-display); color:#181B25; margin:0; letter-spacing:-0.005em; }
+    .dlv ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px; }
+    .dlv li { font:400 11.5px/1.4 var(--ra-font-deck-body); color:#2F3340; padding-left:10px; position:relative; }
+    .dlv li::before { content:""; position:absolute; left:0; top:6px; width:4px; height:4px; border-radius:50%; background:#4F60FF; }
+    .dlv li strong { font-weight:600; color:#181B25; }
+    .dlv li .hot { color:#C92A2A; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Deliverables</p>
+    <h2 class="ra-title sm">What the discovery sprint must deliver.</h2>
+    <div class="dlv-head">
+      <div class="m">100 hrs<small>contracted</small></div>
+      <div class="m">£18,280<small>fixed</small></div>
+      <div class="m">18 – 29 May<small>window</small></div>
+      <div class="m">5<small>work areas</small></div>
+    </div>
+    <div class="dlv-grid">
+      <div class="dlv"><span class="n">01</span><h3>Gold Layer Audit</h3>
+        <ul>
+          <li>Map <strong>73 folders → 17 domains</strong> (parallel to Day 1)</li>
+          <li>Update pre-existing conceptual entity model</li>
+          <li>Produce <strong>physical data model spec</strong> &mdash; names, FKs, keys, problems</li>
+          <li>Written audit report to Carwow</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">02</span><h3>Hightouch Feed Audit</h3>
+        <ul>
+          <li><strong>544-sync inventory</strong> from Jairo with purpose + criticality</li>
+          <li>Classify: Tier 1 ops · Tier 2 reporting · Tier 3 deferred</li>
+          <li>Identify Google Sheets reporting vs operational (closes <span class="hot">OQ-12</span>)</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">03</span><h3>dbt / BQ Audit</h3>
+        <ul>
+          <li>Review existing dbt-bigquery / reporting project</li>
+          <li>Find reusable BQ SQL patterns</li>
+          <li>Informs Phase 1 build effort estimate</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">04</span><h3>Domain Workshops</h3>
+        <ul>
+          <li>Sessions with Steph + domain leads</li>
+          <li>Close all <strong>12 OQs</strong>; <span class="hot">OQ-3 + OQ-7 are hard blockers</span></li>
+          <li>Confirm <strong>conformed dimensions</strong>: User, Vehicle, Dealer, Date, Country, Channel</li>
+          <li>Agree canonical KPI definitions per domain</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">05</span><h3>Plan Review · Fri 29 May</h3>
+        <ul>
+          <li>Identify scope adds/removes with time + cost</li>
+          <li>Recommend Phase 2 domain priority</li>
+          <li>Formal review: Becky, Steph, Mark, Lewis</li>
+          <li><strong>This meeting triggers the main SOW signature.</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">08 / 17</span>
+    </div>
+</div></div><script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(innerWidth/1280, innerHeight/720); s.style.transform='scale('+r+')';};fit(); addEventListener('resize',fit);})();</script>
+</body></html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" role="img" aria-label="checklist icon">
+  <circle cx="12" cy="12" r="12" fill="#4F60FF"></circle>
+  <g transform="translate(4 4) scale(0.667)" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m3 17 2 2 4-4"></path>
+    <path d="m3 7 2 2 4-4"></path>
+    <path d="M13 6h8"></path>
+    <path d="M13 12h8"></path>
+    <path d="M13 18h8"></path>
+  </g>
+</svg>

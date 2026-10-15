@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" role="img" aria-label="performance icon">
+  <circle cx="12" cy="12" r="12" fill="#4F60FF"></circle>
+  <g transform="translate(4 4) scale(0.667)" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 3v18h18"></path>
+    <path d="m19 9-5 5-4-4-3 3"></path>
+  </g>
+</svg>

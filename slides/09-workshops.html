@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>What the domain workshops are (and are not)</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="../slides.css">
+<style>.ra-foot{font-size:12px}.ra-foot #pageno{color:#9BA1A6}.ra-foot.on-dark #pageno{color:rgba(255,255,255,0.45)}</style>
+</head><body>
+<div class="ra-slide-stage"><div class="ra-slide s-light" data-screen-label="09 What the domain workshops are (and are not)">
+<a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .ws-lead { font:400 17px/1.5 var(--ra-font-deck-body); color:#2F3340; margin:10px 0 14px; max-width:1100px; }
+    .ws-lead strong { color:#181B25; font-weight:600; }
+    .ws-grid { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:18px; min-height:0; }
+    .ws-col { background:#F7F7FA; border-radius:10px; padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+    .ws-col.in { background:#ECFCEC; }
+    .ws-col.out { background:#FFE9E4; }
+    .ws-col h3 { font:700 18px/1.25 var(--ra-font-deck-display); margin:0; color:#181B25; display:flex; align-items:center; gap:10px; }
+    .ws-col h3 .tag { font:700 10px/1 var(--ra-font-deck-ui); letter-spacing:0.14em; text-transform:uppercase; padding:4px 8px; border-radius:4px; }
+    .ws-col.in h3 .tag { background:#1F8A36; color:#fff; }
+    .ws-col.out h3 .tag { background:#C92A2A; color:#fff; }
+    .ws-col ul { list-style:none; padding:0; margin:6px 0 0; display:flex; flex-direction:column; gap:7px; }
+    .ws-col li { font:400 14px/1.5 var(--ra-font-deck-body); color:#181B25; padding-left:16px; position:relative; }
+    .ws-col.in li::before { content:""; position:absolute; left:0; top:7px; width:6px; height:6px; border-radius:50%; background:#1F8A36; }
+    .ws-col.out li::before { content:""; position:absolute; left:0; top:7px; width:8px; height:1.5px; background:#C92A2A; }
+    .ws-col li strong { font-weight:600; color:#181B25; }
+    .ws-foot { margin-top:12px; padding:14px 18px; background:#1F2433; color:#fff; border-radius:8px; font:400 14px/1.5 var(--ra-font-deck-body); }
+    .ws-foot strong { color:#FF8D73; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Workshops · framing</p>
+    <h2 class="ra-title sm">What the domain workshops are (and are not).</h2>
+    <p class="ws-lead">Workshops are <strong>design sessions for the new gold layer</strong>. The question in every one: what are the canonical entities in this domain, how do they relate, and what are the authoritative KPI definitions? Participants are domain experts &mdash; Steph, leads, analysts who built the models &mdash; not end-user stakeholders articulating dashboard wishes.</p>
+    <div class="ws-grid">
+      <div class="ws-col in">
+        <h3><span class="tag">In scope</span></h3>
+        <ul>
+          <li><strong>Canonical entity definitions</strong> &mdash; what is an Order, User, Vehicle, Dealer, Lead in this domain</li>
+          <li><strong>Existing join keys</strong> &mdash; what actually joins in source data vs what is worked around with aggregation</li>
+          <li><strong>Conformed dimensions</strong>: User, Vehicle, Dealer, Date, Country, Channel</li>
+          <li><strong>KPI definitions</strong> &mdash; the single authoritative definition of each metric this domain owns</li>
+          <li><strong>Entity resolution problems</strong> &mdash; document explicitly as Phase 2 design inputs; do not attempt to solve in this sprint</li>
+        </ul>
+      </div>
+      <div class="ws-col out">
+        <h3><span class="tag">Not in scope</span></h3>
+        <ul>
+          <li>"What dashboards do you want?" &mdash; that's <strong>Phase 2 requirements work</strong></li>
+          <li>Ingestion or pipeline design</li>
+          <li>Anything requiring remodelling of source data or transformation logic</li>
+          <li>Agreeing new joins that have no basis in the existing source data</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ws-foot">The tone that will not work: <strong>facilitated wishlist sessions.</strong> Steph has flagged this explicitly. If a session drifts toward "what would you like to see in reports," redirect to "what does this entity represent and how does it connect to that one."</p>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">09 / 17</span>
+    </div>
+</div></div><script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(innerWidth/1280, innerHeight/720); s.style.transform='scale('+r+')';};fit(); addEventListener('resize',fit);})();</script>
+</body></html>

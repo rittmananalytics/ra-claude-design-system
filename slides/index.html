@@ -1,0 +1,172 @@
+<!doctype html>
+<!-- @dsCard group="Slides" name="Slide deck preview" subtitle="Deck navigator — Google Sans" viewport="1280x800" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rittman Analytics — Slide deck preview</title>
+<link rel="stylesheet" href="../colors_and_type.css?v=1777312826499">
+<style>
+  html, body { margin: 0; padding: 0; background: #1A1B22; color: #fff; font-family: var(--ra-font-deck-body); height: 100%; }
+  *, *::before, *::after { box-sizing: border-box; }
+
+  .stage { position: fixed; inset: 0; display: grid; place-items: center; overflow: hidden; }
+  .frame {
+    width: 1280px; height: 720px;
+    transform-origin: center;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+    background: #fff;
+    position: relative;
+  }
+  .frame iframe {
+    width: 1280px; height: 720px;
+    border: 0;
+    display: block;
+  }
+
+  /* Chrome — sits OUTSIDE the scaled frame, always at viewport-real size */
+  .chrome-top {
+    position: fixed; top: 18px; left: 18px; right: 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    pointer-events: none; z-index: 10;
+    font: 500 12px/1 var(--ra-font-deck-ui);
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .chrome-top .brand { display: flex; align-items: center; gap: 10px; pointer-events: auto; }
+  .chrome-top .brand img { height: 18px; opacity: 0.85; }
+  .chrome-top .label { color: rgba(255,255,255,0.4); }
+
+  .nav {
+    position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(28,30,40,0.92);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    padding: 8px 10px;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+  }
+  .nav button {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid; place-items: center;
+    transition: background 0.15s;
+    font-size: 16px;
+  }
+  .nav button:hover { background: rgba(255,255,255,0.1); }
+  .nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav .counter {
+    font: 600 13px/1 var(--ra-font-deck-ui);
+    color: #fff;
+    letter-spacing: 0.04em;
+    padding: 0 10px;
+    min-width: 70px;
+    text-align: center;
+  }
+  .nav .counter small { color: rgba(255,255,255,0.5); font-weight: 400; margin-left: 2px; }
+
+  .nav .label {
+    font: 500 12px/1 var(--ra-font-deck-ui);
+    color: rgba(255,255,255,0.7);
+    padding-right: 10px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 14px;
+    margin-left: 4px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="chrome-top">
+  <div class="brand"><img src="../assets/logo-white-blue.svg" alt="Rittman Analytics"><span class="label">Slide template</span></div>
+  <div class="label" id="slide-name">01 · Title</div>
+</div>
+
+<div class="stage">
+  <div class="frame"><iframe id="slide" src="01-title-internal.html" loading="eager"></iframe></div>
+</div>
+
+<div class="nav">
+  <button id="prev" title="Previous (←)">‹</button>
+  <span class="counter"><span id="cur">1</span><small>/<span id="total">11</span></small></span>
+  <button id="next" title="Next (→)">›</button>
+  <span class="label" id="nav-label">Title</span>
+</div>
+
+<script>
+  const slides = [
+    { src: "01-title-internal.html",   label: "Title · internal" },
+    { src: "02-title-pitch.html",      label: "Title · pitch" },
+    { src: "03-section-divider.html",  label: "Section divider" },
+    { src: "04-agenda.html",           label: "Agenda" },
+    { src: "05-intro-pillars.html",    label: "Intro · three pillars" },
+    { src: "06-expertise-grid.html",   label: "Expertise grid" },
+    { src: "07-methodology-venn.html", label: "Methodology · Venn" },
+    { src: "08-diagram.html",          label: "Diagram" },
+    { src: "09-two-up.html",           label: "Two-up" },
+    { src: "10-bullets.html",          label: "Bullets" },
+    { src: "11-metric.html",           label: "Big metric" },
+    { src: "12-orgchart.html",         label: "Org chart" },
+    { src: "13-questions.html",        label: "Q&A" },
+    { src: "14-closing.html",          label: "Closing" },
+    { src: "15-team-intros.html",      label: "Team — introductions" }
+  ];
+
+  let i = 0;
+  const iframe = document.getElementById('slide');
+  const cur = document.getElementById('cur');
+  const total = document.getElementById('total');
+  const navLabel = document.getElementById('nav-label');
+  const slideName = document.getElementById('slide-name');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  total.textContent = slides.length;
+
+  function paint() {
+    const s = slides[i];
+    iframe.src = s.src;
+    cur.textContent = i + 1;
+    navLabel.textContent = s.label;
+    slideName.textContent = String(i + 1).padStart(2, '0') + ' · ' + s.label;
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+    try { localStorage.setItem('ra-deck-slide', String(i)); } catch(e) {}
+  }
+
+  prev.onclick = () => { if (i > 0) { i--; paint(); } };
+  next.onclick = () => { if (i < slides.length - 1) { i++; paint(); } };
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') prev.click();
+    else if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') next.click();
+  });
+
+  // Restore position
+  try {
+    const saved = parseInt(localStorage.getItem('ra-deck-slide') || '0', 10);
+    if (saved >= 0 && saved < slides.length) i = saved;
+  } catch(e) {}
+
+  // Scaling — fit 1280x720 into the viewport with margin for chrome
+  function fit() {
+    const frame = document.querySelector('.frame');
+    const margin = 80; // room for chrome top + bottom
+    const sx = window.innerWidth / 1280;
+    const sy = (window.innerHeight - margin) / 720;
+    const r = Math.min(sx, sy, 1);
+    frame.style.transform = `scale(${r})`;
+  }
+  fit();
+  window.addEventListener('resize', fit);
+
+  paint();
+</script>
+
+</body>
+</html>

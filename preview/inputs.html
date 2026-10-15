@@ -1,0 +1,14 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Form inputs" subtitle="Text, select, textarea + focus state" viewport="700x340" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>body{margin:0;padding:24px;background:#fff;font-family:var(--ra-font-body);display:flex;flex-direction:column;gap:14px;max-width:380px}
+label{font:600 13px var(--ra-font-ui);color:#181B25}
+input,select,textarea{font:400 14px var(--ra-font-body);border:1px solid #E1E1E9;border-radius:8px;padding:12px 14px;color:#181B25;background:#fff;outline:none;transition:all .15s}
+input:focus,select:focus,textarea:focus{border-color:#4F60FF;box-shadow:0 0 0 3px rgba(79,96,255,.18)}
+input::placeholder{color:#9BA1A6}
+.field{display:flex;flex-direction:column;gap:6px}
+</style></head><body>
+<div class="field"><label>Work email</label><input type="email" placeholder="you@company.com"></div>
+<div class="field"><label>Company size</label><select><option>10–50 people</option><option>50–200 people</option></select></div>
+<div class="field"><label>Tell us about the challenge</label><textarea rows="3" placeholder="What is your team trying to solve?"></textarea></div>
+</body></html>

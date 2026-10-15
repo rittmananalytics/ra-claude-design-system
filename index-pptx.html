@@ -1,0 +1,767 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Carwow · Delivery Team Kickoff (print)</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="slides.css">
+<style>
+  /* On-screen preview — stack slides vertically with gaps so the user
+     can confirm before printing. */
+  html, body { margin: 0; padding: 0; background: #1A1B22; }
+  body { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; }
+
+  /* Each slide page must be exactly 1280×720, no scaling */
+  .ra-slide-stage {
+    position: static !important;
+    width: 1280px !important;
+    height: 720px !important;
+    background: transparent;
+    overflow: hidden;
+    display: block;
+    page-break-after: always;
+    break-after: page;
+  }
+  .ra-slide {
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  /* Footer page-number colour fix carried from each slide */
+  .ra-foot { font-size: 12px; }
+  .ra-foot #pageno { color: #9BA1A6; }
+  .ra-foot.on-dark #pageno { color: rgba(255,255,255,0.45); }
+
+  /* === Print === */
+  @page { size: 1280px 720px; margin: 0; }
+  @media print {
+    html, body { background: #fff; padding: 0; gap: 0; }
+    body { display: block; }
+    .ra-slide-stage {
+      width: 1280px !important;
+      height: 720px !important;
+      box-shadow: none !important;
+      break-after: page;
+      break-inside: avoid;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+    .ra-slide-stage:last-child { break-after: auto; page-break-after: auto; }
+    .ra-slide { box-shadow: none !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ra-slide-stage" id="s1">
+<div class="ra-slide s-dark" data-screen-label="01 Carwow · BigQuery & Looker Migration">
+  <a class="ra-logo"><img src="assets/logo-white-blue.svg" alt=""></a>
+  
+  <style>
+    .title-wrap { position:absolute; left:48px; right:48px; top:160px; }
+    .title-eyebrow { color:#87A0FF; font:600 14px/1 var(--ra-font-deck-ui); letter-spacing:0.18em; text-transform:uppercase; margin:0 0 22px; }
+    .title-h1 { font: 700 70px/1.04 var(--ra-font-deck-display); letter-spacing:-0.025em; margin:0 0 26px; color:#fff; max-width:980px; text-wrap:pretty; }
+    .title-h1 b { color:#87A0FF; font-weight:700; }
+    .title-meta { display:flex; gap:48px; margin-top:36px; }
+    .title-meta div { color:rgba(255,255,255,.65); font:400 16px/1.4 var(--ra-font-deck-body); }
+    .title-meta strong { display:block; color:#fff; font:600 18px/1.3 var(--ra-font-deck-display); margin-bottom:4px; letter-spacing:-0.005em; }
+    .title-stamp { position:absolute; top:48px; right:48px; font:600 11px/1 var(--ra-font-deck-ui); letter-spacing:0.2em; text-transform:uppercase; color:#FF8D73; }
+  </style>
+  <span class="title-stamp">Internal · Confidential</span>
+  <div class="title-wrap">
+    <p class="title-eyebrow">Discovery Sprint Kickoff</p>
+    <h1 class="title-h1">Carwow.<br><b>BigQuery &amp; Looker</b><br>Migration.</h1>
+    <div class="title-meta">
+      <div><strong>Sprint window</strong>18 – 29 May 2026</div>
+      <div><strong>Owners</strong>Mark Rittman · Lewis Baker · Lydia · Olu (PM)</div>
+      <div><strong>Briefing</strong>15 May 2026</div>
+    </div>
+  </div>
+
+  
+    <div class="ra-foot on-dark">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">01 / 17</span>
+    </div>
+</div>
+</div>
+
+<div class="ra-slide-stage" id="s2">
+<div class="ra-slide s-light" data-screen-label="02 What this session is for">
+  <a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+  
+  <div class="ra-body">
+    <p class="ra-eyebrow">Briefing · 15 May 2026</p>
+    <h2 class="ra-title sm" style="max-width:1000px;">What this session is for.</h2>
+    <ul class="ra-bullets" style="margin-top:24px;">
+      <li>A shared understanding of <strong>why this project exists</strong> and what Carwow is trying to achieve.</li>
+      <li>Clarity on the delivery approach &mdash; which has <strong>evolved since the SOW was first drafted</strong>.</li>
+      <li>What the discovery sprint needs to produce, and why it matters for everything that follows.</li>
+      <li>Who the <strong>key stakeholders</strong> are, what they care about, and how to read the room.</li>
+      <li>The actual <strong>workshop schedule</strong> for Week 1 and what we need to get right in each session.</li>
+    </ul>
+    <div style="margin-top:32px; padding:16px 20px; background:#FFE9E4; border-left:3px solid #FF8D73; border-radius:6px; font:500 16px/1.5 var(--ra-font-deck-body); color:#4F1B0F;">
+      This is not a client-facing briefing. <strong>Say what you actually think.</strong>
+    </div>
+  </div>
+
+  
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">02 / 17</span>
+    </div>
+</div>
+</div>
+
+<div class="ra-slide-stage" id="s3">
+<div class="ra-slide s-light" data-screen-label="03 Who is Carwow?">
+  <a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+  
+  <div class="ra-body">
+    <p class="ra-eyebrow">Context · client</p>
+    <h2 class="ra-title sm" style="max-width:1000px;">Who is Carwow?</h2>
+    <ul class="ra-bullets" style="margin-top:18px;">
+      <li><strong>UK car marketplace</strong> &mdash; consumers find, configure and purchase new and used cars; dealers and manufacturers pay for listings and leads.</li>
+      <li><strong>Core products</strong>: Carwow marketplace (consumer listings + lead-gen) and GetYourCar (finance and subscription product).</li>
+      <li><strong>~400 people</strong>, London HQ. Also operating in Germany &mdash; separate GCP project, <strong>in scope for this engagement</strong>.</li>
+      <li>Analytics team of ~10, led by <strong>Becky Allsop</strong> (Director of Analytics &amp; Data Science).</li>
+      <li>No dedicated analytics engineering function. Analysts have been building ad-hoc dbt models to answer individual questions; the gold layer has <strong>grown organically with significant redundancy and duplication across ~100 schemas</strong>.</li>
+    </ul>
+  </div>
+
+  
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">03 / 17</span>
+    </div>
+</div>
+</div>
+
+<div class="ra-slide-stage" id="s4">
+<div class="ra-slide s-light" data-screen-label="04 The current data stack">
+  <a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+  
+  <style>
+    .stack-grid { margin-top:14px; border-top:1px solid #E1E1E9; }
+    .stack-row { display:grid; grid-template-columns:160px 260px 1fr; gap:24px; padding:12px 4px; border-bottom:1px solid #E1E1E9; align-items:baseline; }
+    .stack-layer { font:600 13px/1 var(--ra-font-deck-ui); text-transform:uppercase; letter-spacing:0.12em; color:#4F60FF; }
+    .stack-tech { font:600 18px/1.3 var(--ra-font-deck-display); color:#181B25; letter-spacing:-0.005em; }
+    .stack-notes { font:400 15px/1.45 var(--ra-font-deck-body); color:#4F5564; }
+    .stack-callout { margin-top:24px; padding:18px 22px; background:#EFF0FF; border-radius:8px; font:400 16px/1.5 var(--ra-font-deck-body); color:#1F2433; }
+    .stack-callout strong { font-weight:700; color:#181B25; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Context · stack</p>
+    <h2 class="ra-title sm">The current data stack.</h2>
+    <div class="stack-grid">
+      <div class="stack-row"><span class="stack-layer">Ingestion</span><span class="stack-tech">Fivetran</span><span class="stack-notes">Multiple sources</span></div>
+      <div class="stack-row"><span class="stack-layer">Warehouse</span><span class="stack-tech">Snowflake</span><span class="stack-notes">~210–240 TB</span></div>
+      <div class="stack-row"><span class="stack-layer">Transformation</span><span class="stack-tech">dbt · Snowflake project</span><span class="stack-notes">~1,200–1,500 models</span></div>
+      <div class="stack-row"><span class="stack-layer">Reverse ETL</span><span class="stack-tech">Hightouch</span><span class="stack-notes">544 syncs</span></div>
+      <div class="stack-row"><span class="stack-layer">BI</span><span class="stack-tech">Tableau + Metabase</span><span class="stack-notes">27–40 active Tableau dashboards</span></div>
+      <div class="stack-row"><span class="stack-layer">Gold layer</span><span class="stack-tech">~73 folders · ~17 domains</span><span class="stack-notes">High redundancy, no single owner, use-case-specific models duplicated across old + new schema versions</span></div>
+    </div>
+    <p class="stack-callout">The gold layer problem in one sentence: <strong>analysts have been building use-case-specific models for four years with no central architecture</strong>, leaving duplicated metrics across multiple tables, four separate customer schemas, and no reliable way to answer "does this definition already exist somewhere?"</p>
+  </div>
+
+  
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">04 / 17</span>
+    </div>
+</div>
+</div>
+
+<div class="ra-slide-stage" id="s5">
+<div class="ra-slide s-light" data-screen-label="05 Why this project is happening now">
+  <a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+  
+  <style>
+    .ff-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-top:14px; }
+    .ff-card { background:#F7F7FA; border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; gap:8px; }
+    .ff-num { font:700 28px/1 var(--ra-font-deck-display); color:#4F60FF; letter-spacing:-0.02em; }
+    .ff-name { font:700 17px/1.25 var(--ra-font-deck-display); color:#181B25; }
+    .ff-body { font:400 14px/1.5 var(--ra-font-deck-body); color:#2F3340; }
+    .penalty { margin-top:18px; padding:18px 22px; background:#1F2433; color:#fff; border-radius:8px; display:flex; gap:18px; align-items:center; }
+    .penalty .amt { font:700 38px/1 var(--ra-font-deck-display); color:#FF8D73; letter-spacing:-0.02em; }
+    .penalty .lbl { font:400 15px/1.45 var(--ra-font-deck-body); color:rgba(255,255,255,.85); }
+    .penalty .lbl strong { color:#fff; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Context · timing</p>
+    <h2 class="ra-title sm">Why this project is happening now.</h2>
+    <p class="ra-sub" style="font-size:18px; margin:10px 0 14px;">Three forcing functions, all hitting the same window.</p>
+    <div class="ff-grid">
+      <div class="ff-card">
+        <span class="ff-num">01</span>
+        <span class="ff-name">Tableau will not renew.</span>
+        <p class="ff-body">Contract ends <strong>August 2026</strong>. They declined even a one-month extension. If Carwow is not off Tableau by end of August, they have no BI tool. <strong>Non-negotiable.</strong></p>
+      </div>
+      <div class="ff-card">
+        <span class="ff-num">02</span>
+        <span class="ff-name">Snowflake renews in September.</span>
+        <p class="ff-body">The natural cutover moment. Staying past September means another <strong>12-month contract at significant cost</strong>.</p>
+      </div>
+      <div class="ff-card">
+        <span class="ff-num">03</span>
+        <span class="ff-name">Google PSF funding.</span>
+        <p class="ff-body">Google is co-funding part of this engagement, contingent on Carwow migrating to GCP/BigQuery. This drove the <strong>fixed-price contract structure</strong>.</p>
+      </div>
+    </div>
+    <div class="penalty">
+      <span class="amt">£50K</span>
+      <span class="lbl"><strong>Contractual penalty</strong> if Looker is not live before the Tableau switch-off at end of August. The Tableau deadline drives everything about sequencing.</span>
+    </div>
+  </div>
+
+  
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">05 / 17</span>
+    </div>
+</div>
+</div>
+
+<div class="ra-slide-stage" id="s6">
+<div class="ra-slide s-light" data-screen-label="06 The stakeholders">
+  <a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+  
+  <style>
+    .sk-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 32px; margin-top:12px; }
+    .sk { display:grid; grid-template-columns:130px 1fr; gap:14px; }
+    .sk-name { font:700 14px/1.3 var(--ra-font-deck-display); color:#181B25; letter-spacing:-0.005em; }
+    .sk-role { font:600 11px/1.3 var(--ra-font-deck-ui); color:#4F60FF; text-transform:uppercase; letter-spacing:0.08em; margin-top:2px; }
+    .sk-note { font:400 13px/1.45 var(--ra-font-deck-body); color:#2F3340; }
+    .sk-note strong { color:#181B25; font-weight:600; }
+    .sk-side { display:flex; flex-direction:column; }
+    .sk-side-cw .sk-role { color:#4F60FF; }
+    .sk-side-ra .sk-role { color:#FF8D73; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">People · read the room</p>
+    <h2 class="ra-title sm">The stakeholders.</h2>
+    <div class="sk-grid" style="margin-top:18px;">
+      <div class="sk sk-side-cw"><div class="sk-side"><p class="sk-name">Becky Allsop</p><p class="sk-role">Carwow · Sponsor</p></div><p class="sk-note">Director of Analytics &amp; Data Science. Signs off on scope changes. <strong>Pragmatic, understands data architecture, will back us when it matters.</strong> Direct conversation between principals, no intermediaries.</p></div>
+      <div class="sk sk-side-cw"><div class="sk-side"><p class="sk-name">Steph Giles</p><p class="sk-role">Carwow · Tech counterpart</p></div><p class="sk-note">Main technical counterpart through discovery. <strong>Deeply sceptical of consultants who hand over documents and disappear.</strong> Raised concerns about the pre-engagement model since Sept &mdash; she was right to. Treat as co-designer, not reviewer.</p></div>
+      <div class="sk sk-side-cw"><div class="sk-side"><p class="sk-name">Jairo Reyes</p><p class="sk-role">Carwow · Hightouch owner</p></div><p class="sk-note">Present in every workshop. We need his <strong>544-sync inventory with business purpose and criticality</strong> &mdash; this is a Day 1 ask, not Week 2. Build the relationship on Monday.</p></div>
+      <div class="sk sk-side-cw"><div class="sk-side"><p class="sk-name">Ashleigh Bond</p><p class="sk-role">Carwow · Analyst</p></div><p class="sk-note">Appears across SMC, GYC and SMC Ops sessions, but has <strong>declined or not confirmed several</strong>. Likely one of the most technically important analysts. Understand her work even if sessions don't surface it.</p></div>
+      <div class="sk sk-side-cw"><div class="sk-side"><p class="sk-name">Roman Petrochenkov</p><p class="sk-role">Carwow · Marketing / OEM</p></div><p class="sk-note">Senior stakeholder. Becky and Steph have referenced him as someone <strong>whose team's expectations need careful management</strong>. Pay attention to what he flags.</p></div>
+      <div class="sk sk-side-cw"><div class="sk-side"><p class="sk-name">Gagen Rai</p><p class="sk-role">Carwow · Procurement</p></div><p class="sk-note">Not a daily counterpart, but relevant if scope conversations arise. <strong>Fixed-price orientation</strong>; has seen all the contingency discussions.</p></div>
+      <div class="sk sk-side-ra"><div class="sk-side"><p class="sk-name">Olu (Oluwamayowa Adeogun)</p><p class="sk-role">RA · PM</p></div><p class="sk-note">Embedded at Carwow, started 13 May. Critical for coordination, scheduling, rooms, keeping the sprint on track. <strong>First point of contact for anything operational.</strong></p></div>
+      <div class="sk sk-side-ra"><div class="sk-side"><p class="sk-name">Mike</p><p class="sk-role">RA · Delivery PM</p></div><p class="sk-note">Raised the migration complexity questions (240TB, dual ingestion, freeze mechanics). <strong>His questions are legitimate and need answers before build starts.</strong></p></div>
+      <div class="sk sk-side-ra" style="grid-column:1 / -1;"><div class="sk-side"><p class="sk-name">Lydia</p><p class="sk-role">RA · Discovery</p></div><p class="sk-note">Attending all discovery workshops. Role in this engagement to be clarified in session.</p></div>
+    </div>
+  </div>
+
+  
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">06 / 17</span>
+    </div>
+</div>
+</div>
+
+<div class="ra-slide-stage" id="s7"><div class="ra-slide s-light" data-screen-label="07 The delivery approach">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .ap-banner { margin:8px 0 18px; padding:14px 18px; background:#FFE9E4; border-left:3px solid #FF8D73; border-radius:6px; font:500 14px/1.45 var(--ra-font-deck-body); color:#4F1B0F; }
+    .ap-banner strong { font-weight:700; color:#1F1108; }
+    .ap-steps { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:14px; min-height:0; }
+    .ap-step { background:#F7F7FA; border-radius:10px; padding:16px 18px; display:flex; flex-direction:column; gap:6px; position:relative; }
+    .ap-step .n { font:700 12px/1 var(--ra-font-deck-ui); letter-spacing:0.16em; text-transform:uppercase; color:#4F60FF; }
+    .ap-step .who { font:600 11px/1 var(--ra-font-deck-ui); letter-spacing:0.1em; text-transform:uppercase; color:#FF8D73; }
+    .ap-step h3 { font:700 17px/1.25 var(--ra-font-deck-display); margin:2px 0 6px; color:#181B25; letter-spacing:-0.005em; }
+    .ap-step p { font:400 13px/1.45 var(--ra-font-deck-body); color:#2F3340; margin:0; }
+    .ap-step .who-row { display:flex; justify-content:space-between; align-items:baseline; }
+    .ap-foot { margin-top:14px; padding:14px 18px; background:#EFF0FF; border-radius:8px; font:400 13.5px/1.5 var(--ra-font-deck-body); color:#1F2433; }
+    .ap-foot strong { font-weight:700; color:#181B25; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Approach · read carefully</p>
+    <h2 class="ra-title sm" style="font-size:36px; margin-bottom:8px;">The delivery approach.<span style="color:#FF8D73;"> It has changed.</span></h2>
+    <p class="ap-banner">The SOW's Appendix [X] described a <strong>projection-based remodelling</strong> on top of the existing gold layer. <strong>That approach has been superseded</strong> by what was agreed in the onsite planning session on 13 May. The current approach is:</p>
+    <div class="ap-steps">
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 01 · Phase 1</span><span class="who">RA</span></div>
+        <h3>Lift and shift.</h3>
+        <p>Copy all Snowflake data to BigQuery <strong>exactly as-is</strong>. No transformation, no remodelling. RA handles Fivetran repointing, BQ Transfer Service for bulk historical, dbt syntax conversion. Gold layer lands in BigQuery in the same shape.</p>
+      </div>
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 02 · Phase 1</span><span class="who">Steph / Carwow</span></div>
+        <h3>Looker on as-is data.</h3>
+        <p>Steph puts Looker directly on the lifted BigQuery data. Hits the <strong>August Tableau deadline</strong> without RA building a projection layer. RA supports and advises; this Looker implementation is primarily Steph's work.</p>
+      </div>
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 03 · Discovery sprint</span><span class="who">RA</span></div>
+        <h3>New gold layer design.</h3>
+        <p>RA designs the proper new gold layer from first principles. <strong>Genuine ground-up entity modelling</strong> &mdash; conceptual, logical, physical specs. Begins in this discovery sprint.</p>
+      </div>
+      <div class="ap-step">
+        <div class="who-row"><span class="n">Step 04 · Phase 2 (separate SOW)</span><span class="who">RA</span></div>
+        <h3>New gold layer build.</h3>
+        <p>Build and test the new entity-based gold layer in BigQuery. Progressively migrate Looker explores. Properly address entity join problems (incl. GYC). <strong>12–24 month programme &mdash; this is what Carwow actually bought</strong> when they chose us over a lift-and-shift vendor.</p>
+      </div>
+    </div>
+    <p class="ap-foot">Implication for this sprint: the workshops are <strong>not projection-scoping sessions. They are genuine design sessions for the new gold layer.</strong> Appendix [X]'s exclusions about "end-user or engineer-led remodelling workshops" were written for the old approach and are not operative constraints on what we design in discovery.</p>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">07 / 17</span>
+    </div>
+</div></div>
+
+<div class="ra-slide-stage" id="s8"><div class="ra-slide s-light" data-screen-label="08 What the discovery sprint must deliver">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .dlv-head { display:flex; gap:24px; margin:8px 0 14px; }
+    .dlv-head .m { font:700 22px/1 var(--ra-font-deck-display); color:#4F60FF; letter-spacing:-0.01em; }
+    .dlv-head .m small { display:block; font:500 11px/1 var(--ra-font-deck-ui); color:#6B7280; letter-spacing:0.1em; text-transform:uppercase; margin-top:4px; font-weight:600; }
+    .dlv-grid { flex:1; display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; min-height:0; }
+    .dlv { background:#F7F7FA; border-radius:8px; padding:14px 14px 12px; display:flex; flex-direction:column; gap:8px; }
+    .dlv .n { font:700 14px/1 var(--ra-font-deck-display); color:#4F60FF; }
+    .dlv h3 { font:700 14px/1.25 var(--ra-font-deck-display); color:#181B25; margin:0; letter-spacing:-0.005em; }
+    .dlv ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:5px; }
+    .dlv li { font:400 11.5px/1.4 var(--ra-font-deck-body); color:#2F3340; padding-left:10px; position:relative; }
+    .dlv li::before { content:""; position:absolute; left:0; top:6px; width:4px; height:4px; border-radius:50%; background:#4F60FF; }
+    .dlv li strong { font-weight:600; color:#181B25; }
+    .dlv li .hot { color:#C92A2A; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Deliverables</p>
+    <h2 class="ra-title sm">What the discovery sprint must deliver.</h2>
+    <div class="dlv-head">
+      <div class="m">100 hrs<small>contracted</small></div>
+      <div class="m">£18,280<small>fixed</small></div>
+      <div class="m">18 – 29 May<small>window</small></div>
+      <div class="m">5<small>work areas</small></div>
+    </div>
+    <div class="dlv-grid">
+      <div class="dlv"><span class="n">01</span><h3>Gold Layer Audit</h3>
+        <ul>
+          <li>Map <strong>73 folders → 17 domains</strong> (parallel to Day 1)</li>
+          <li>Update pre-existing conceptual entity model</li>
+          <li>Produce <strong>physical data model spec</strong> &mdash; names, FKs, keys, problems</li>
+          <li>Written audit report to Carwow</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">02</span><h3>Hightouch Feed Audit</h3>
+        <ul>
+          <li><strong>544-sync inventory</strong> from Jairo with purpose + criticality</li>
+          <li>Classify: Tier 1 ops · Tier 2 reporting · Tier 3 deferred</li>
+          <li>Identify Google Sheets reporting vs operational (closes <span class="hot">OQ-12</span>)</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">03</span><h3>dbt / BQ Audit</h3>
+        <ul>
+          <li>Review existing dbt-bigquery / reporting project</li>
+          <li>Find reusable BQ SQL patterns</li>
+          <li>Informs Phase 1 build effort estimate</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">04</span><h3>Domain Workshops</h3>
+        <ul>
+          <li>Sessions with Steph + domain leads</li>
+          <li>Close all <strong>12 OQs</strong>; <span class="hot">OQ-3 + OQ-7 are hard blockers</span></li>
+          <li>Confirm <strong>conformed dimensions</strong>: User, Vehicle, Dealer, Date, Country, Channel</li>
+          <li>Agree canonical KPI definitions per domain</li>
+        </ul>
+      </div>
+      <div class="dlv"><span class="n">05</span><h3>Plan Review · Fri 29 May</h3>
+        <ul>
+          <li>Identify scope adds/removes with time + cost</li>
+          <li>Recommend Phase 2 domain priority</li>
+          <li>Formal review: Becky, Steph, Mark, Lewis</li>
+          <li><strong>This meeting triggers the main SOW signature.</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">08 / 17</span>
+    </div>
+</div></div>
+
+<div class="ra-slide-stage" id="s9"><div class="ra-slide s-light" data-screen-label="09 What the domain workshops are (and are not)">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .ws-lead { font:400 17px/1.5 var(--ra-font-deck-body); color:#2F3340; margin:10px 0 14px; max-width:1100px; }
+    .ws-lead strong { color:#181B25; font-weight:600; }
+    .ws-grid { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:18px; min-height:0; }
+    .ws-col { background:#F7F7FA; border-radius:10px; padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+    .ws-col.in { background:#ECFCEC; }
+    .ws-col.out { background:#FFE9E4; }
+    .ws-col h3 { font:700 18px/1.25 var(--ra-font-deck-display); margin:0; color:#181B25; display:flex; align-items:center; gap:10px; }
+    .ws-col h3 .tag { font:700 10px/1 var(--ra-font-deck-ui); letter-spacing:0.14em; text-transform:uppercase; padding:4px 8px; border-radius:4px; }
+    .ws-col.in h3 .tag { background:#1F8A36; color:#fff; }
+    .ws-col.out h3 .tag { background:#C92A2A; color:#fff; }
+    .ws-col ul { list-style:none; padding:0; margin:6px 0 0; display:flex; flex-direction:column; gap:7px; }
+    .ws-col li { font:400 14px/1.5 var(--ra-font-deck-body); color:#181B25; padding-left:16px; position:relative; }
+    .ws-col.in li::before { content:""; position:absolute; left:0; top:7px; width:6px; height:6px; border-radius:50%; background:#1F8A36; }
+    .ws-col.out li::before { content:""; position:absolute; left:0; top:7px; width:8px; height:1.5px; background:#C92A2A; }
+    .ws-col li strong { font-weight:600; color:#181B25; }
+    .ws-foot { margin-top:12px; padding:14px 18px; background:#1F2433; color:#fff; border-radius:8px; font:400 14px/1.5 var(--ra-font-deck-body); }
+    .ws-foot strong { color:#FF8D73; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Workshops · framing</p>
+    <h2 class="ra-title sm">What the domain workshops are (and are not).</h2>
+    <p class="ws-lead">Workshops are <strong>design sessions for the new gold layer</strong>. The question in every one: what are the canonical entities in this domain, how do they relate, and what are the authoritative KPI definitions? Participants are domain experts &mdash; Steph, leads, analysts who built the models &mdash; not end-user stakeholders articulating dashboard wishes.</p>
+    <div class="ws-grid">
+      <div class="ws-col in">
+        <h3><span class="tag">In scope</span></h3>
+        <ul>
+          <li><strong>Canonical entity definitions</strong> &mdash; what is an Order, User, Vehicle, Dealer, Lead in this domain</li>
+          <li><strong>Existing join keys</strong> &mdash; what actually joins in source data vs what is worked around with aggregation</li>
+          <li><strong>Conformed dimensions</strong>: User, Vehicle, Dealer, Date, Country, Channel</li>
+          <li><strong>KPI definitions</strong> &mdash; the single authoritative definition of each metric this domain owns</li>
+          <li><strong>Entity resolution problems</strong> &mdash; document explicitly as Phase 2 design inputs; do not attempt to solve in this sprint</li>
+        </ul>
+      </div>
+      <div class="ws-col out">
+        <h3><span class="tag">Not in scope</span></h3>
+        <ul>
+          <li>"What dashboards do you want?" &mdash; that's <strong>Phase 2 requirements work</strong></li>
+          <li>Ingestion or pipeline design</li>
+          <li>Anything requiring remodelling of source data or transformation logic</li>
+          <li>Agreeing new joins that have no basis in the existing source data</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ws-foot">The tone that will not work: <strong>facilitated wishlist sessions.</strong> Steph has flagged this explicitly. If a session drifts toward "what would you like to see in reports," redirect to "what does this entity represent and how does it connect to that one."</p>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">09 / 17</span>
+    </div>
+</div></div>
+
+<div class="ra-slide-stage" id="s10"><div class="ra-slide s-light" data-screen-label="10 The GetYourCar problem">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .gyc-lead { font:500 17px/1.5 var(--ra-font-deck-body); color:#181B25; margin:8px 0 12px; max-width:1100px; }
+    .gyc-grid { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:16px; min-height:0; }
+    .gyc-col { display:flex; flex-direction:column; gap:10px; }
+    .gyc-box { background:#F7F7FA; border-radius:10px; padding:14px 18px; }
+    .gyc-box.alert { background:#FFE9E4; border-left:3px solid #FF8D73; }
+    .gyc-box.note  { background:#EFF0FF; border-left:3px solid #4F60FF; }
+    .gyc-box h3 { font:700 14px/1.2 var(--ra-font-deck-display); margin:0 0 6px; color:#181B25; letter-spacing:-0.005em; text-transform:uppercase; letter-spacing:0.06em; font-size:11px; }
+    .gyc-box p { font:400 14px/1.5 var(--ra-font-deck-body); color:#1F2433; margin:0; }
+    .gyc-box p strong { font-weight:600; color:#181B25; }
+    .gyc-deliv h3 { font:700 11px/1 var(--ra-font-deck-ui); letter-spacing:0.14em; text-transform:uppercase; color:#4F60FF; margin:0 0 8px; }
+    .gyc-deliv ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:7px; }
+    .gyc-deliv li { font:400 14px/1.5 var(--ra-font-deck-body); color:#181B25; padding-left:18px; position:relative; }
+    .gyc-deliv li::before { content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:#4F60FF; }
+    .gyc-ask { margin-top:auto; padding:14px 18px; background:#1F2433; color:#fff; border-radius:8px; font:500 14px/1.5 var(--ra-font-deck-body); }
+    .gyc-ask strong { color:#87A0FF; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">The hard design question</p>
+    <h2 class="ra-title sm" style="font-size:36px;">The GetYourCar problem. <span style="color:#FF8D73;">Know this before you walk in.</span></h2>
+    <p class="gyc-lead">The most important single design question for the sprint. <strong>Raise it explicitly in the Tuesday GYC sessions.</strong></p>
+    <div class="gyc-grid">
+      <div class="gyc-col">
+        <div class="gyc-box alert">
+          <h3>The problem</h3>
+          <p>A customer can submit a GYC enquiry without completing a configuration. Configurations and enquiries <strong>do not have a 1:1 join relationship</strong>. No reliable common join key exists in source data.</p>
+        </div>
+        <div class="gyc-box note">
+          <h3>Why it matters</h3>
+          <p>The metric the entire business wants is <strong>configuration-to-enquiry conversion rate</strong>. Currently impossible at transaction level. Workaround is an aggregated table (dealership × product × day) which avoids the join but is use-case-specific.</p>
+        </div>
+        <div class="gyc-box">
+          <h3>What Phase 1 does</h3>
+          <p><strong>Nothing.</strong> The aggregated table lifts as-is to BigQuery. Steph's Looker sits on it in its current form.</p>
+        </div>
+      </div>
+      <div class="gyc-col">
+        <div class="gyc-deliv">
+          <h3>What discovery must produce</h3>
+          <ul>
+            <li>A clear <strong>written articulation</strong> of the entity relationship problem &mdash; what it is, why it exists</li>
+            <li>Investigation of whether a join key could be <strong>derived from source data</strong> &mdash; session IDs, event timestamps, probabilistic matching</li>
+            <li>A <strong>proposed entity model for Phase 2</strong> &mdash; even if Phase 2 requires ingestion changes to implement, document what right looks like</li>
+          </ul>
+        </div>
+        <div class="gyc-ask">
+          Do not leave the Tuesday sessions without surfacing and documenting this. Ask directly:<br><br>
+          <strong>"How do you currently compute configuration-to-enquiry conversion rate, and what table does that come from?"</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">10 / 17</span>
+    </div>
+</div></div>
+
+<div class="ra-slide-stage" id="s11"><div class="ra-slide s-light" data-screen-label="11 Open questions to resolve">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .oq-lead { font:400 17px/1.5 var(--ra-font-deck-body); color:#2F3340; margin:10px 0 18px; max-width:1100px; }
+    .oq-lead strong { color:#181B25; font-weight:600; }
+    .oq-row { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:18px; min-height:0; }
+    .oq-card { background:#F7F7FA; border-radius:10px; padding:18px 22px; display:flex; flex-direction:column; gap:8px; }
+    .oq-card.block { background:#FFE9E4; border-left:3px solid #C92A2A; }
+    .oq-card .tag { font:700 11px/1 var(--ra-font-deck-ui); letter-spacing:0.14em; text-transform:uppercase; color:#4F60FF; }
+    .oq-card.block .tag { color:#C92A2A; }
+    .oq-card h3 { font:700 19px/1.25 var(--ra-font-deck-display); margin:0; color:#181B25; letter-spacing:-0.005em; }
+    .oq-card p { font:400 14px/1.5 var(--ra-font-deck-body); color:#1F2433; margin:0; }
+    .oq-card .stub { margin-top:8px; padding:10px 12px; background:rgba(0,0,0,0.04); border-radius:6px; font:500 12px/1.4 var(--ra-font-deck-ui); color:#6B7280; letter-spacing:0.02em; }
+    .oq-action { margin-top:14px; padding:14px 18px; background:#1F2433; color:#fff; border-radius:8px; font:400 14px/1.5 var(--ra-font-deck-body); display:flex; gap:14px; align-items:flex-start; }
+    .oq-action .owner { flex-shrink:0; font:700 11px/1 var(--ra-font-deck-ui); letter-spacing:0.16em; text-transform:uppercase; color:#FF8D73; padding-top:3px; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Register · OQ-1 to OQ-12</p>
+    <h2 class="ra-title sm">Open questions to resolve.</h2>
+    <p class="oq-lead">The SOW references <strong>12 open questions</strong>. Most are domain-resolvable inside the workshops. Two are hard <strong>build blockers</strong>.</p>
+    <div class="oq-row">
+      <div class="oq-card block">
+        <span class="tag">OQ-3 · Hard blocker</span>
+        <h3>Build cannot start until this closes.</h3>
+        <p class="stub">Content to be confirmed and inserted before the deck is presented. Lewis owns this.</p>
+      </div>
+      <div class="oq-card block">
+        <span class="tag">OQ-7 · Hard blocker</span>
+        <h3>Build cannot start until this closes.</h3>
+        <p class="stub">Content to be confirmed and inserted before the deck is presented. Lewis owns this.</p>
+      </div>
+    </div>
+    <div class="oq-action">
+      <span class="owner">Pre-sprint · Lewis + Mark</span>
+      <span>The full OQ list with current status must be produced and circulated to <strong>Steph and Becky before Monday 18 May.</strong> Workshops can't run effectively without the register being visible to both sides &mdash; Carwow need to know what we're resolving and why it matters.</span>
+    </div>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">11 / 17</span>
+    </div>
+</div></div>
+
+<div class="ra-slide-stage" id="s12"><div class="ra-slide s-light" data-screen-label="12 Week 1 workshop schedule">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .sch-lead { font:400 14px/1.45 var(--ra-font-deck-body); color:#4F5564; margin:6px 0 10px; }
+    .sch-lead strong { color:#181B25; font-weight:600; }
+    .sch { flex:1; display:grid; grid-template-columns:80px 1fr 1fr 1fr; grid-template-rows:auto repeat(2, 1fr); gap:8px; min-height:0; align-items:stretch; }
+    .sch-dayh { font:700 13px/1 var(--ra-font-deck-display); letter-spacing:0.04em; color:#181B25; text-transform:uppercase; padding:8px 0 4px; }
+    .sch-tlh { font:600 10px/1 var(--ra-font-deck-ui); color:#6B7280; letter-spacing:0.12em; text-transform:uppercase; padding:8px 4px 0; }
+    .sch-day { font:700 13px/1.2 var(--ra-font-deck-display); color:#4F60FF; letter-spacing:-0.005em; padding:8px 4px; display:flex; flex-direction:column; gap:2px; }
+    .sch-day .d { font:700 22px/1 var(--ra-font-deck-display); color:#181B25; letter-spacing:-0.01em; }
+    .sch-day .m { font:500 11px/1 var(--ra-font-deck-ui); color:#6B7280; letter-spacing:0.08em; text-transform:uppercase; }
+    .ses { background:#F7F7FA; border-radius:6px; padding:8px 10px; display:flex; flex-direction:column; gap:2px; border-left:3px solid #4F60FF; min-width:0; }
+    .ses .time { font:600 10px/1 var(--ra-font-deck-ui); color:#6B7280; letter-spacing:0.08em; text-transform:uppercase; }
+    .ses .name { font:700 12px/1.2 var(--ra-font-deck-display); color:#181B25; }
+    .ses .room { font:400 10px/1.3 var(--ra-font-deck-body); color:#6B7280; }
+    .ses.alert { background:#FFE9E4; border-left-color:#FF8D73; }
+    .ses.alert .name { color:#4F1B0F; }
+    .ses-empty { background:transparent; }
+    .sch-foot { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+    .sch-foot div { padding:10px 14px; background:#EFF0FF; border-radius:6px; font:400 12px/1.4 var(--ra-font-deck-body); color:#1F2433; }
+    .sch-foot div strong { color:#181B25; font-weight:600; }
+    .sch-foot div.warn { background:#FFE9E4; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Week 1 · 18 – 22 May 2026</p>
+    <h2 class="ra-title sm">Workshop schedule.</h2>
+    <p class="sch-lead">Eight sessions Monday through Thursday. <strong>Three on Wednesday, two of them back-to-back.</strong> Mark to accept the Monday 13:30 invite &mdash; currently "needsAction".</p>
+    <div class="sch">
+      <span></span>
+      <span class="sch-tlh">Morning · 10:00 – 12:30</span>
+      <span class="sch-tlh">Afternoon · 13:00 – 16:30</span>
+      <span class="sch-tlh">Notes</span>
+
+      <div class="sch-day"><span class="m">Mon</span><span class="d">18</span><span class="m">May</span></div>
+      <div class="ses-empty"></div>
+      <div class="ses alert"><span class="time">13:30 – 14:30</span><span class="name">SMC Commercial</span><span class="room">London-2 · Johnny Dapp · Mark to accept invite</span></div>
+      <div class="ses-empty" style="font:400 11px/1.4 var(--ra-font-deck-body); color:#6B7280; padding:8px 4px;">Diego Coimbra likely SMC domain lead &mdash; build the relationship.</div>
+
+      <div class="sch-day"><span class="m">Tue</span><span class="d">19</span><span class="m">May</span></div>
+      <div class="ses"><span class="time">10:00 – 11:00</span><span class="name">GYC Marketplace</span><span class="room">London-2 · DE-Office remote</span></div>
+      <div class="ses"><span class="time">15:00 – 16:00</span><span class="name">GYC Analytics Focus</span><span class="room">London-2 · Ruby</span></div>
+      <div class="ses-empty" style="font:400 11px/1.4 var(--ra-font-deck-body); color:#6B7280; padding:8px 4px;"><strong style="color:#FF8D73;">Raise the GYC join problem.</strong> Don't leave without articulation.</div>
+
+      <div class="sch-day"><span class="m">Wed</span><span class="d">20</span><span class="m">May</span></div>
+      <div class="ses"><span class="time">10:30 – 11:30 · 11:30 – 12:30</span><span class="name">SMC Ops → SMC Analytics</span><span class="room">Johnny Dapp · <span style="color:#C92A2A">room TBC</span></span></div>
+      <div class="ses"><span class="time">15:30 – 16:30</span><span class="name">Marketing Analytics</span><span class="room">London-2 · Johnny Dapp</span></div>
+      <div class="ses-empty" style="font:400 11px/1.4 var(--ra-font-deck-body); color:#6B7280; padding:8px 4px;">Heaviest day. <strong>Plan the SMC Ops → Analytics handover.</strong> Roman in PM.</div>
+
+      <div class="sch-day"><span class="m">Thu</span><span class="d">21</span><span class="m">May</span></div>
+      <div class="ses"><span class="time">10:30 – 11:30 · 11:30 – 12:30</span><span class="name">OEM &amp; Media → OEM Analytics</span><span class="room">London-2 · Ruby</span></div>
+      <div class="ses-empty"></div>
+      <div class="ses-empty" style="font:400 11px/1.4 var(--ra-font-deck-body); color:#6B7280; padding:8px 4px;">External: Javier Chamorro (we-discover.com). Know who he is.</div>
+    </div>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">12 / 17</span>
+    </div>
+</div></div>
+
+<div class="ra-slide-stage" id="s13"><div class="ra-slide s-light" data-screen-label="13 What we don't have yet">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <div class="ra-body">
+    <p class="ra-eyebrow">Open · before Monday</p>
+    <h2 class="ra-title sm">What we don't have yet.</h2>
+    <ul class="ra-bullets" style="margin-top:18px;">
+      <li><strong>Thursday afternoon onwards.</strong> The session list was cut off. <em style="color:#FF8D73; font-style:normal; font-weight:600;">Olu → confirm full Thursday + Week 2 schedule and circulate before Monday.</em></li>
+      <li><strong>Week 2 sessions.</strong> Not yet shared. Expected: Finance domain, a cross-domain synthesis session, and the formal plan review on Friday 29 May.<br>The Friday 29 May meeting is <strong>the main SOW signature trigger</strong> &mdash; prepare the contract pack in advance.</li>
+      <li><strong>OQ-1 to OQ-12 register.</strong> Full list with current status and owners must be produced and shared with Carwow before Monday. <em style="color:#FF8D73; font-style:normal; font-weight:600;">Lewis + Mark pre-sprint action.</em></li>
+      <li><strong>Room for Wed SMC Analytics Focus.</strong> Not booked. <em style="color:#FF8D73; font-style:normal; font-weight:600;">Olu → resolve before Wednesday morning.</em></li>
+      <li><strong>Javier Chamorro (we-discover.com).</strong> External attendee in Thursday's OEM &amp; Media session. <em style="color:#FF8D73; font-style:normal; font-weight:600;">Understand his role before the session.</em></li>
+    </ul>
+  </div>
+
+
+    <div class="ra-foot">
+      <span>Internal · Delivery Team Kickoff</span>
+      <span>Carwow · BigQuery + Looker Migration</span>
+      <span>Discovery Sprint · 18–29 May 2026</span>
+      <span id="pageno">13 / 17</span>
+    </div>
+</div></div>
+
+<div class="ra-slide-stage" id="s14"><div class="ra-slide s-light" data-screen-label="14 Operational notes for the week">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <div class="ra-body">
+    <p class="ra-eyebrow">Read the room · operational</p>
+    <h2 class="ra-title sm">Operational notes for the week.</h2>
+    <ul class="ra-bullets" style="margin-top:18px;">
+      <li><strong>Jairo is in every single session.</strong> Primary opportunity to drive the Hightouch audit in parallel with the domain workshops. Open the conversation Monday; confirm inventory delivery by Tuesday EOD; escalate to Becky Wednesday AM if not received.</li>
+      <li><strong>Three sessions on Wednesday</strong>, two back-to-back. SMC Ops (10:30) runs into SMC Analytics Focus (11:30) with no gap. Plan the transition. Afternoon Marketing (15:30) gives some recovery time.</li>
+      <li><strong>Ashleigh Bond</strong> appears across multiple domains but has declined or not confirmed several. She may be the most technically informed analyst on the team &mdash; if sessions don't surface her work, <strong>find time separately</strong>.</li>
+      <li><strong>The analytics team is watching.</strong> Becky told us the broader Carwow analytics team is nervous and wants to see a plan. A stakeholder-facing programme overview &mdash; schedule, target architecture, what we're designing and why &mdash; needs to go out <strong>by end of Tuesday</strong>. Not optional; it's a confidence signal.</li>
+      <li><strong>Gold-layer folder triage (73 → 17 domains)</strong> must run in parallel with the workshops, not after them. <strong>Lewis to start Monday morning before the first session</strong> &mdash; triage informs every subsequent workshop.</li>
+    </ul>
+  </div>
+
+<div class="ra-foot"><span>Internal · Delivery Team Kickoff</span><span>Carwow · BigQuery + Looker Migration</span><span>Discovery Sprint · 18–29 May 2026</span><span id="pageno">14 / 17</span></div>
+</div></div>
+
+<div class="ra-slide-stage" id="s15"><div class="ra-slide s-light" data-screen-label="15 What "good" looks like at end of discovery">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .gl-grid { flex:1; display:grid; grid-template-columns:1fr 1fr; gap:10px 22px; align-content:start; margin-top:14px; min-height:0; }
+    .gl-item { display:grid; grid-template-columns:24px 1fr; gap:10px; align-items:start; padding:7px 0; }
+    .gl-tick { width:20px; height:20px; border-radius:50%; background:#1F8A36; color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; font:700 12px/1 var(--ra-font-deck-display); }
+    .gl-text { font:400 14px/1.4 var(--ra-font-deck-body); color:#1F2433; }
+    .gl-text strong { color:#181B25; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Definition of done · Fri 29 May</p>
+    <h2 class="ra-title sm">What "good" looks like at end of discovery.</h2>
+    <div class="gl-grid">
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text">17-domain conceptual entity model reviewed, validated against actual data, and <strong>updated with proposed Phase 2 entity model</strong></span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>Physical data model spec</strong> &mdash; entities, attributes, FKs, partition/cluster keys, resolution problems documented per domain</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>GetYourCar entity relationship problem</strong> investigated and documented; proposed Phase 2 model written up</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>544 Hightouch syncs classified</strong>; Tier 1 / operational identified; OQ-12 closed</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text">All <strong>12 OQs resolved or formally escalated</strong>; OQ-3 and OQ-7 closed</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>Conformed dimension definitions agreed</strong> across all six dimensions</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>Canonical KPI definitions agreed per domain</strong></span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>Migration strategy document</strong> &mdash; dual ingestion, freeze plan, validation framework, schema freeze checkpoint</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>Phase 2 domain prioritisation</strong> recommendation &mdash; which domain gets designed and built first, and why</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text">Stakeholder comms shared with the Carwow analytics team &mdash; team knows what is happening and when</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>Formal discovery review</strong> completed with Becky, Steph, Mark, Lewis</span></div>
+      <div class="gl-item"><span class="gl-tick">✓</span><span class="gl-text"><strong>Main project SOW signed.</strong></span></div>
+    </div>
+  </div>
+
+<div class="ra-foot"><span>Internal · Delivery Team Kickoff</span><span>Carwow · BigQuery + Looker Migration</span><span>Discovery Sprint · 18–29 May 2026</span><span id="pageno">15 / 17</span></div>
+</div></div>
+
+<div class="ra-slide-stage" id="s16"><div class="ra-slide s-light" data-screen-label="16 Before Monday: action list">
+<a class="ra-logo"><img src="assets/logo-black-blue.svg" alt=""></a>
+
+  <style>
+    .ac-table { margin-top:14px; border-top:1px solid #E1E1E9; }
+    .ac-row { display:grid; grid-template-columns:1fr 160px 180px; gap:18px; padding:12px 4px; border-bottom:1px solid #E1E1E9; align-items:baseline; }
+    .ac-row.head { border-bottom:1px solid #181B25; }
+    .ac-row.head .lbl { font:700 10px/1 var(--ra-font-deck-ui); letter-spacing:0.14em; text-transform:uppercase; color:#6B7280; }
+    .ac-action { font:600 15px/1.35 var(--ra-font-deck-display); color:#181B25; letter-spacing:-0.005em; }
+    .ac-owner { font:500 13px/1.3 var(--ra-font-deck-body); color:#4F60FF; }
+    .ac-when { font:500 13px/1.3 var(--ra-font-deck-body); color:#181B25; }
+    .ac-when.now { color:#C92A2A; font-weight:600; }
+  </style>
+  <div class="ra-body">
+    <p class="ra-eyebrow">Pre-sprint</p>
+    <h2 class="ra-title sm">Before Monday: action list.</h2>
+    <div class="ac-table">
+      <div class="ac-row head"><span class="lbl">Action</span><span class="lbl">Owner</span><span class="lbl">When</span></div>
+      <div class="ac-row"><span class="ac-action">Accept Mon 18 May 13:30 SMC Commercial invite</span><span class="ac-owner">Mark</span><span class="ac-when now">Now</span></div>
+      <div class="ac-row"><span class="ac-action">OQ-1 to OQ-12 register produced and sent to Steph + Becky</span><span class="ac-owner">Lewis + Mark</span><span class="ac-when">Before Mon 18 May</span></div>
+      <div class="ac-row"><span class="ac-action">Full Thu afternoon + Week 2 workshop schedule confirmed and circulated</span><span class="ac-owner">Olu</span><span class="ac-when">Before Mon 18 May</span></div>
+      <div class="ac-row"><span class="ac-action">Hightouch inventory request to Jairo</span><span class="ac-owner">Lewis / Olu</span><span class="ac-when">Mon 18 May · first session</span></div>
+      <div class="ac-row"><span class="ac-action">Gold-layer 73-folder triage started</span><span class="ac-owner">Lewis</span><span class="ac-when">Mon 18 May AM</span></div>
+      <div class="ac-row"><span class="ac-action">Stakeholder comms pack for Carwow analytics team drafted</span><span class="ac-owner">Mark + Lewis</span><span class="ac-when">Tue 19 May EOD</span></div>
+      <div class="ac-row"><span class="ac-action">Room for Wed SMC Analytics Focus booked</span><span class="ac-owner">Olu</span><span class="ac-when">Before Wed 20 May</span></div>
+      <div class="ac-row"><span class="ac-action">Understand who Javier Chamorro (we-discover.com) is</span><span class="ac-owner">Olu / Lewis</span><span class="ac-when">Before Thu 21 May</span></div>
+    </div>
+  </div>
+
+<div class="ra-foot"><span>Internal · Delivery Team Kickoff</span><span>Carwow · BigQuery + Looker Migration</span><span>Discovery Sprint · 18–29 May 2026</span><span id="pageno">16 / 17</span></div>
+</div></div>
+
+<div class="ra-slide-stage" id="s17"><div class="ra-slide s-deep" data-screen-label="17 Questions / discussion">
+<a class="ra-logo"><img src="assets/logo-white-blue.svg" alt=""></a>
+
+  <div class="ra-section-center">
+    <div>
+      <h2 style="font-size:72px; max-width:1100px;">Questions / Discussion.</h2>
+      <p class="sub" style="margin-top:36px; font-size:22px; max-width:880px;">
+        What are you uncertain about going into Monday?<br>
+        What do you need from Mark or Lewis before you can start?<br>
+        What do you know about Carwow or this project that isn't in this briefing?
+      </p>
+    </div>
+  </div>
+
+<div class="ra-foot on-dark"><span>Internal · Delivery Team Kickoff</span><span>Carwow · BigQuery + Looker Migration</span><span>Discovery Sprint · 18–29 May 2026</span><span id="pageno">17 / 17</span></div>
+</div></div>
+
+
+</body></html>

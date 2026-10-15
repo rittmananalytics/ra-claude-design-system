@@ -1,0 +1,210 @@
+/* Rittman Analytics — Slide deck template (shared)
+   ---------------------------------------------------
+   16:9 / 1280×720 work-area, derived from the real PPTX master:
+     · Internal All-Hands April 2026 deck
+     · Booksy Innovation Day pitch deck
+
+   Coordinate system: PPTX masters are 960×540 EMU-equiv; we render
+   at 1280×720, a ×4/3 scale. All paddings and font sizes below are
+   already converted to 1280×720 px.
+
+   FIXED-PER-SLIDE FURNITURE (every content slide):
+     · Logo top-LEFT  (48, 45) — height 28px (white-on-dark, black-on-light)
+     · Footer bottom (48, 660) — 4-part contact line, font 14px/1
+   Section dividers + Q&A skip the logo + footer (full-bleed wordmark).
+
+   TYPE SCALE (44pt = 78px in this coordinate space):
+     · Title large    78px / 1.05 / 700 / -0.025em
+     · Title medium   56px / 1.10 / 700 / -0.02em
+     · Title small    42px / 1.15 / 700 / -0.015em
+     · Eyebrow        16px uppercase 600 / 0.16em
+     · Body lead      24px / 1.45 / 400
+     · Body           20px / 1.5  / 400
+     · Footer / meta  13px / 1
+*/
+
+html, body { margin: 0; padding: 0; height: 100%; background: #1A1B22; }
+
+.ra-slide-stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #1A1B22;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.ra-slide {
+  width: 1280px;
+  height: 720px;
+  flex-shrink: 0;
+  transform-origin: center center;
+  box-shadow: 0 40px 120px rgba(0,0,0,.5);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--ra-font-deck-body);
+  background: #FFFFFF;
+  color: #181B25;
+}
+
+/* Surfaces */
+.ra-slide.s-light  { background: #FFFFFF; color: #181B25; }
+.ra-slide.s-paper  { background: #F7F7FA; color: #181B25; }
+.ra-slide.s-dark   { background: #1F2433; color: #FFFFFF; }
+.ra-slide.s-deep   { background: #2F3997; color: #FFFFFF; }
+.ra-slide.s-indigo { background: #4F60FF; color: #FFFFFF; }
+
+/* ---------- LOGO (top-left) -----------------------------------------
+   Sits top-left at 48px×45px, 28px tall. Use the white-on-dark variant
+   on dark surfaces; black-blue on light. */
+.ra-logo {
+  position: absolute;
+  top: 45px;
+  left: 48px;
+  height: 28px;
+  z-index: 5;
+}
+.ra-logo img { height: 100%; display: block; }
+
+/* ---------- FOOTER (bottom, 4-part contact line) --------------------
+   Sits 30px from bottom, 48px from each side, 13px text. */
+.ra-foot {
+  position: absolute;
+  left: 48px;
+  right: 48px;
+  bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  font: 400 13px/1 var(--ra-font-deck-ui);
+  color: #8A8F9C;
+  letter-spacing: 0.005em;
+  z-index: 5;
+}
+.ra-foot.on-dark   { color: rgba(255,255,255,.55); }
+.ra-foot.on-indigo { color: rgba(255,255,255,.65); }
+.ra-foot span { white-space: nowrap; }
+
+/* ---------- BODY GRID -----------------------------------------------
+   Default content area sits between the logo strip and the footer.
+   Top 110px clears the 28px logo + 37px breathing room.
+   Bottom 80px clears the footer + 20px breathing room. */
+.ra-body {
+  position: absolute;
+  left: 48px;
+  right: 48px;
+  top: 110px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- TYPE ----------------------------------------------------- */
+.ra-eyebrow {
+  font: 600 16px/1.2 var(--ra-font-deck-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #4F60FF;
+  margin: 0 0 14px;
+}
+.ra-eyebrow.on-dark   { color: #87A0FF; }
+.ra-eyebrow.on-indigo { color: #B7E5FE; }
+
+.ra-title {
+  font: 700 78px/1.05 var(--ra-font-deck-display);
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: inherit;
+  text-wrap: pretty;
+}
+.ra-title.md { font: 700 56px/1.10 var(--ra-font-deck-display); letter-spacing: -0.02em; }
+.ra-title.sm { font: 700 42px/1.15 var(--ra-font-deck-display); letter-spacing: -0.015em; }
+
+.ra-sub {
+  font: 400 24px/1.45 var(--ra-font-deck-body);
+  color: #4F5564;
+  margin: 16px 0 0;
+  text-wrap: pretty;
+}
+.ra-sub.on-dark { color: rgba(255,255,255,.78); }
+
+.ra-presenter {
+  font: 500 22px/1.45 var(--ra-font-deck-body);
+  color: inherit;
+  margin: 0;
+}
+
+/* ---------- BULLETS -------------------------------------------------- */
+.ra-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ra-bullets > li {
+  font: 400 22px/1.45 var(--ra-font-deck-body);
+  color: #181B25;
+  padding-left: 32px;
+  position: relative;
+}
+.ra-bullets > li::before {
+  content: "●";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  color: #4F60FF;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.ra-bullets > li strong { font-weight: 700; color: #181B25; }
+.ra-bullets ul {
+  list-style: none;
+  padding: 8px 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ra-bullets ul li {
+  font: 400 18px/1.4 var(--ra-font-deck-body);
+  color: #4F5564;
+  padding-left: 28px;
+  position: relative;
+}
+.ra-bullets ul li::before {
+  content: "○";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  color: #A0A6B5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ---------- SECTION CENTER ------------------------------------------ */
+.ra-section-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0 80px;
+  text-align: center;
+}
+.ra-section-center h2 {
+  font: 700 88px/1.05 var(--ra-font-deck-display);
+  letter-spacing: -0.025em;
+  margin: 0;
+  text-wrap: balance;
+  color: inherit;
+}
+.ra-section-center .sub {
+  font: 400 26px/1.4 var(--ra-font-deck-body);
+  color: rgba(255,255,255,.85);
+  margin: 22px 0 0;
+}
+
+/* ---------- FIT SCRIPT HOOK ----------------------------------------- */
+/* Slides each include a tiny inline script to scale the 1280×720 frame
+   to the viewport. See template at the bottom of any slide file. */

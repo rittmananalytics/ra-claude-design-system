@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Org chart</title>
+<link rel="stylesheet" href="../colors_and_type.css?v=2">
+<link rel="stylesheet" href="slides.css?v=2">
+<style>
+  .org { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:24px; padding:8px 0 8px; min-height:0; }
+  .org-row { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; align-items:flex-start; }
+  .org-row.tier-1 { gap:64px; }
+  .org-card { background:#fff; border:1px solid #E6E7EB; border-radius:8px; padding:14px 18px;
+    min-width:152px; text-align:center; box-shadow:0 2px 8px rgba(20,22,30,0.04); }
+  .org-card.lead { border-color:#4F60FF; box-shadow:0 4px 16px rgba(79,96,255,0.14); }
+  .org-card .name { font:600 14px/1.25 var(--ra-font-deck-display); color:#181B25; margin:0 0 3px; }
+  .org-card .role { font:600 11px/1 var(--ra-font-deck-ui); color:#4F60FF; text-transform:uppercase; letter-spacing:0.08em; }
+  .org-card.muted { border-style:dashed; opacity:0.7; }
+  .org-card.muted .role { color:#8A8F9C; }
+  .org-conn { width:1px; height:20px; background:#D5D8E0; margin:-4px auto -6px; }
+</style>
+</head><body>
+<div class="ra-slide-stage">
+  <div class="ra-slide s-light" data-screen-label="12 Org chart">
+    <a class="ra-logo"><img src="../assets/logo-black-blue.svg" alt="Rittman Analytics"></a>
+    <div class="ra-body">
+      <p class="ra-eyebrow">Re-organisation 2026</p>
+      <h2 class="ra-title sm" style="max-width:880px;">Target org chart for Q4 2026 / Q1 2027.</h2>
+      <div class="org">
+        <div class="org-row tier-1">
+          <div class="org-card lead"><p class="name">Mark Rittman</p><p class="role">CEO</p></div>
+        </div>
+        <div class="org-conn"></div>
+        <div class="org-row" style="gap:64px;">
+          <div class="org-card"><p class="name">Lewis Baker</p><p class="role">CRO</p></div>
+          <div class="org-card"><p class="name">Lydia Blackley</p><p class="role">Head of Delivery</p></div>
+          <div class="org-card"><p class="name">Sadie Mitchell</p><p class="role">Biz Ops</p></div>
+        </div>
+        <div class="org-conn"></div>
+        <div class="org-row">
+          <div class="org-card"><p class="name">Jordan Ilyat</p><p class="role">SAC</p></div>
+          <div class="org-card"><p class="name">George Sanderson</p><p class="role">SAC</p></div>
+          <div class="org-card"><p class="name">Alex Caldwell</p><p class="role">AAC</p></div>
+          <div class="org-card"><p class="name">Saverro Suseno</p><p class="role">AC</p></div>
+          <div class="org-card"><p class="name">Tim Greiw</p><p class="role">AC</p></div>
+          <div class="org-card muted"><p class="name">Future hire</p><p class="role">BDM · Q2</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="ra-foot">
+      <span>© Rittman Analytics 2026</span>
+      <span>T: +44 (0)208 058 5951</span>
+      <span>W: rittmananalytics.com</span>
+      <span>E: info@rittmananalytics.com</span>
+    </div>
+  </div>
+</div>
+<script>(()=>{const s=document.querySelector('.ra-slide');const fit=()=>{const r=Math.min(window.innerWidth/1280,window.innerHeight/720);s.style.transform=`scale(${r})`;};fit();addEventListener('resize',fit);})();</script>
+</body></html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Cards" subtitle="Default + hover/active states" viewport="700x240" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>body{margin:0;padding:24px;background:#fff;font-family:var(--ra-font-body)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid #E1E1E9;border-radius:8px;padding:20px;transition:all .3s}
+.card:hover{box-shadow:0 18px 40px rgba(50,50,93,.12);transform:translateY(-2px)}
+.active{border:2px solid #4F60FF;padding:19px}
+.tinted{border:none;background:#E0E0FF}
+.tinted2{border:none;background:#FFBBBE}
+h4{margin:0 0 6px;font-size:15px;font-weight:600;color:#181B25}
+p{margin:0;font-size:13px;color:#6B7280;line-height:1.5}
+</style></head><body>
+<div class="grid">
+  <div class="card"><h4>Default card</h4><p>1px line, 8px radius, neutral lift on hover.</p></div>
+  <div class="card active"><h4>Active card</h4><p>2px indigo ring on selection.</p></div>
+  <div class="card tinted"><h4>Tinted card</h4><p>Soft fill, no border, ink text.</p></div>
+</div>
+</body></html>
